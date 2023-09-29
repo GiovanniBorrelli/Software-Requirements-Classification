@@ -1,0 +1,4998 @@
+<slack>
+  <team_domain>pythondev</team_domain>
+  <channel_name>help</channel_name>
+  <start_date>2014-11-05T08:56:48.313010</start_date>
+  <end_date>2017-12-31T01:00:01.596486</end_date>
+  <message conversation_id="1">
+    <ts>2017-06-16T10:51:34.290598</ts>
+    <user>Melvin</user>
+    <text>Is it possible to switch between conda and virtualenv? That is I want to switch the actual environment managers not just environments in them … I typically use conda but want to try something out that requires virtual env and is not compatible with conda.  Thanks.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T10:55:34.384740</ts>
+    <user>Beula</user>
+    <text>What is it that "requires virtualenv", most things I know don't require anything other than an interpreter and dependencies</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:05:27.626658</ts>
+    <user>Melvin</user>
+    <text>&lt;@Beula&gt; zappa …. at least if you don’t want to mess with the zappa-conda fork.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:12:26.790435</ts>
+    <user>Johana</user>
+    <text>i don’t see why you couldn’t use a virtualenv for virtualenv things and conda for conda things. the issue is when you try to mix them together but as long as you’re pointed at the right python interpreter things should work.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:12:47.798620</ts>
+    <user>Johana</user>
+    <text>what have you tried so far?</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:12:55.802001</ts>
+    <user>Melvin</user>
+    <text>Ok. So … I’m not sure how to ‘point’ it at the right thing … not even sure where to start.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:13:25.813347</ts>
+    <user>Melvin</user>
+    <text>Just switch the path/env settings?</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:13:25.813670</ts>
+    <user>Johana</user>
+    <text>with virtualenv you activate the environment and it does a lot of handy little things for you like setting the python python.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:13:37.818110</ts>
+    <user>Johana</user>
+    <text>so you activate the virtualenv when you want to use zappa.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:14:49.846808</ts>
+    <user>Johana</user>
+    <text>`source /venv-name/bin/activate` should do it</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:15:22.859984</ts>
+    <user>Johana</user>
+    <text>are you using python 2 or python 3?</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:16:05.876875</ts>
+    <user>Hillary</user>
+    <text>Conda does the same really, so ```conda create envname``` gives you a conda environment</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:16:23.884079</ts>
+    <user>Hillary</user>
+    <text>and then ```source activate envname``` sets it up</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:16:50.894537</ts>
+    <user>Hillary</user>
+    <text>you can use ```which python``` to check which one you are using</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:17:14.903791</ts>
+    <user>Johana</user>
+    <text>but i think the issue is with the library &lt;@Hillary&gt;, :re &lt;https://pythondev.slack.com/archives/C07EFMZ1N/p1497625527626658&gt;</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:17:15.903816</ts>
+    <user>Melvin</user>
+    <text>3 … and (maybe this is just a dumb question) but I was worried that installing using conda to install virtual env is not what I wanted.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:17:17.904817</ts>
+    <user>Hillary</user>
+    <text>but as &lt;@Johana&gt; said, probably best to not try and mix them up</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:17:58.920546</ts>
+    <user>Hillary</user>
+    <text>Oh, hadn't seen zappa before</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:21:00.991498</ts>
+    <user>Johana</user>
+    <text>when you do `which python` what comes up?</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:21:14.996747</ts>
+    <user>Melvin</user>
+    <text>Normally the conda one.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:22:13.019636</ts>
+    <user>Johana</user>
+    <text>that’s where we would run into our first issue. we wouldn’t want to be using the conda one. we would want something like the system python, i believe.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:22:27.025256</ts>
+    <user>Melvin</user>
+    <text>Right… thus my question :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:23:08.040418</ts>
+    <user>Melvin</user>
+    <text>Seems like I need to be able to deactivate conda and ‘activate’ python3 (sytem would be python2) and then use virtual env.  Thanks for getting me started on the right track.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:23:40.053156</ts>
+    <user>Hillary</user>
+    <text>when you create the environment, you can specify something like: ``` virtualenv envname --python='path/to/python'```</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:23:54.058494</ts>
+    <user>Hillary</user>
+    <text>if that helps</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:24:54.081996</ts>
+    <user>Melvin</user>
+    <text>Yes, thanks &lt;@Hillary&gt;</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:25:24.093955</ts>
+    <user>Hillary</user>
+    <text>then follow &lt;@Johana&gt; advice on activating</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:25:54.105805</ts>
+    <user>Melvin</user>
+    <text>conda sets the path to point to its bin directory … so I may need a way to not do that when trying to do virtualenv/zapp stuff … before I can activate the zappa env (if I understand this correctly).</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:32:17.257230</ts>
+    <user>Hillary</user>
+    <text>related to this? &lt;https://github.com/Miserlou/Zappa/issues/167&gt;</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:34:07.300432</ts>
+    <user>Melvin</user>
+    <text>Yes. I just wanted to explore Zappa without having any conda/virtualenv issues. Don’t need conda for this so wanted to switch to using virtualenv and wasn’t sure how to do it. I think I have a strategy now.  Thanks everyone.</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:36:44.668404</ts>
+    <user>Rona</user>
+    <text>heya</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:23.821938</ts>
+    <user>Johana</user>
+    <text>sup &lt;@Rona&gt;</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:34.825369</ts>
+    <user>Johana</user>
+    <text>how’s the masters program going?</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:38.826837</ts>
+    <user>Rona</user>
+    <text>oh I am done</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:41.827837</ts>
+    <user>Johana</user>
+    <text>nice!</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:43.828431</ts>
+    <user>Rona</user>
+    <text>graduate a month ago</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:43.828566</ts>
+    <user>Johana</user>
+    <text>congrats!</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:50.830983</ts>
+    <user>Rona</user>
+    <text>so now I got time for python meetups</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:56.832793</ts>
+    <user>Rona</user>
+    <text>thansk &lt;@Johana&gt;</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:59.833887</ts>
+    <user>Johana</user>
+    <text>haha.. cool :thumbsup:</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:45:38.847124</ts>
+    <user>Rona</user>
+    <text>anything on your end</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:46:16.859718</ts>
+    <user>Johana</user>
+    <text>same old stuff for the most part. i’m just trying to achieve perfect work/life ~balance~ harmony. lol</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:46:47.870159</ts>
+    <user>Rona</user>
+    <text>me to</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:46:56.873056</ts>
+    <user>Rona</user>
+    <text>I am like 75% coding</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:06.876465</ts>
+    <user>Rona</user>
+    <text>if not 10 % of no coding is spent thinking of coding</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:09.877535</ts>
+    <user>Rona</user>
+    <text>the rest is sleep</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:14.879053</ts>
+    <user>Rona</user>
+    <text>and some netlfix</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:26.883061</ts>
+    <user>Rona</user>
+    <text>75% of coding is doing work coding</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:35.886153</ts>
+    <user>Johana</user>
+    <text>that’s good.</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:36.886671</ts>
+    <user>Rona</user>
+    <text>I should say 50% coding 15 % work none coding</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:42.888337</ts>
+    <user>Johana</user>
+    <text>python or .net?</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:49.890778</ts>
+    <user>Rona</user>
+    <text>.net</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:52.891794</ts>
+    <user>Rona</user>
+    <text>but some python also</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:55.892872</ts>
+    <user>Johana</user>
+    <text>or both</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:59.893935</ts>
+    <user>Rona</user>
+    <text>I just love both</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:59.894139</ts>
+    <user>Johana</user>
+    <text>you try some iron python?</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:48:05.896004</ts>
+    <user>Rona</user>
+    <text>I want to</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:48:16.899562</ts>
+    <user>Johana</user>
+    <text>you doing C# or VB?</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:48:19.900657</ts>
+    <user>Rona</user>
+    <text>I want to try WPF in iron python</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:48:23.902048</ts>
+    <user>Rona</user>
+    <text>even if I have no need</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:48:27.903129</ts>
+    <user>Rona</user>
+    <text>powershell and c#</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:48:33.905267</ts>
+    <user>Johana</user>
+    <text>cool</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:48:34.905377</ts>
+    <user>Rona</user>
+    <text>vb hell no</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:48:40.907563</ts>
+    <user>Johana</user>
+    <text>lol</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:49:55.932568</ts>
+    <user>Johana</user>
+    <text>i agree there. i tried to do iron python LONG time ago. i was a dba but the dev was a C# guy and he was said to have been the best in the university. the university was doing consolidation at the system level so he applied to work at our little lab basically to hide.</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:50:16.939273</ts>
+    <user>Johana</user>
+    <text>i tried to take the opportunity to learn what i could but he ended up not being able to do much coding.</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:50:19.940685</ts>
+    <user>Rona</user>
+    <text>anyone who uses macs</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:50:21.941436</ts>
+    <user>Rona</user>
+    <text>this is good &lt;https://monodraw.helftone.com/&gt;</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:50:48.950486</ts>
+    <user>Rona</user>
+    <text>oh wow</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:51:12.958439</ts>
+    <user>Johana</user>
+    <text>haha that’s interesting.</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:54:30.025938</ts>
+    <user>Rona</user>
+    <text>brb</text>
+  </message>
+  <message conversation_id="3">
+    <ts>2017-06-16T12:54:44.030756</ts>
+    <user>Rona</user>
+    <text>do you know how to display ascii art in python</text>
+  </message>
+  <message conversation_id="3">
+    <ts>2017-06-16T12:55:01.036547</ts>
+    <user>Rona</user>
+    <text>is it just this longstring = """\
+You can use multiple lines
+and newlines
+are preserved
+"""</text>
+  </message>
+  <message conversation_id="3">
+    <ts>2017-06-16T13:02:08.187488</ts>
+    <user>Rona</user>
+    <text>&lt;@Johana&gt;  check this out &lt;https://gist.github.com/itadder/0538cce16f1cb162c288c85c557367b7&gt;</text>
+  </message>
+  <message conversation_id="3">
+    <ts>2017-06-16T13:05:01.248613</ts>
+    <user>Rona</user>
+    <text>that cool</text>
+  </message>
+  <message conversation_id="3">
+    <ts>2017-06-16T13:07:43.304020</ts>
+    <user>Rona</user>
+    <text>just learning more python</text>
+  </message>
+  <message conversation_id="3">
+    <ts>2017-06-16T13:07:55.308185</ts>
+    <user>Rona</user>
+    <text>trying to think of a project to do on the weekends that is not super hard but uses python</text>
+  </message>
+  <message conversation_id="3">
+    <ts>2017-06-16T13:08:38.322352</ts>
+    <user>Beula</user>
+    <text>If you're short on ideas, feel free to check in on the &lt;#C2FMLUBEU|community_projects&gt;</text>
+  </message>
+  <message conversation_id="3">
+    <ts>2017-06-16T13:11:25.378002</ts>
+    <user>Rona</user>
+    <text>ahh thanks</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:12:33.400524</ts>
+    <user>Ciera</user>
+    <text>:smile:</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:13:30.419510</ts>
+    <user>Suellen</user>
+    <text>Such a good bot.</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:16:29.479117</ts>
+    <user>Ciera</user>
+    <text>almost as if sometime he is control by a human :smile:</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:17:01.489636</ts>
+    <user>Suellen</user>
+    <text>:open_mouth:</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:17:03.490555</ts>
+    <user>Suellen</user>
+    <text>Wait a second.</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:17:38.502015</ts>
+    <user>Suellen</user>
+    <text>So you *were* snooping on our private conversation? :flushed:</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:19:14.533483</ts>
+    <user>Ciera</user>
+    <text>I don't know what conversation but I can make &lt;@Alesia&gt; say what I want</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:21:12.573149</ts>
+    <user>Suellen</user>
+    <text>Oh, alright. So you can't see our convo?</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:21:16.574927</ts>
+    <user>Suellen</user>
+    <text>Alright.</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:21:29.579089</ts>
+    <user>Suellen</user>
+    <text>Not that I say anything bad.</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:23:09.612382</ts>
+    <user>Ciera</user>
+    <text>if &lt;@Alesia&gt; is in a channel (public or private) we could snoop with the logs. In private messages &lt;@Alesia&gt; doesn't see them, only when you use `/` commands</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:26:40.684180</ts>
+    <user>Beula</user>
+    <text>We should probably put that in the intro doc just so we are fully transparent. I think we spoke about that before and filed an issue already</text>
+  </message>
+  <message conversation_id="4">
+    <ts>2017-06-16T13:31:37.787005</ts>
+    <user>Ciera</user>
+    <text>slackline is also listening to stuff but only on general</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:29:08.971469</ts>
+    <user>Johnathon</user>
+    <text>hey guys</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:30:08.992420</ts>
+    <user>Suellen</user>
+    <text>hey buddy</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:30:11.993368</ts>
+    <user>Johnathon</user>
+    <text>I have installed a python package with pip, made some changes on the source code, recompiled it with `python -m compileall .` but when I run package_name -arguments my changes weren't applied</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:30:18.995952</ts>
+    <user>Johnathon</user>
+    <text>any tips?</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:31:00.010434</ts>
+    <user>Suellen</user>
+    <text>compileall?</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:31:30.020883</ts>
+    <user>Johnathon</user>
+    <text>yeah I did this at `/usr/local/lib/python2.7/dist-packages/mypackage`</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:31:34.022229</ts>
+    <user>Suellen</user>
+    <text>oh</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:31:45.025657</ts>
+    <user>Johnathon</user>
+    <text>I also removed the previous .pyc file</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:31:53.028688</ts>
+    <user>Johnathon</user>
+    <text>before recompiling</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:39:36.181847</ts>
+    <user>Johnathon</user>
+    <text>apologies if I'm asking in the wrong channel, I didn't find one for pip issues</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:40:26.198233</ts>
+    <user>Johana</user>
+    <text>help is a good channel to ask in n/w.</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:44:34.280101</ts>
+    <user>Johana</user>
+    <text>did you install your package with `-e`?</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:44:51.285770</ts>
+    <user>Johana</user>
+    <text>`pip install -e "path/to/package"`</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:47:46.343855</ts>
+    <user>Johnathon</user>
+    <text>&lt;@Johana&gt; no</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:48:11.352214</ts>
+    <user>Johnathon</user>
+    <text>just `pip install mypackage`</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:48:13.352834</ts>
+    <user>Johana</user>
+    <text>that would be your issue</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:48:19.355109</ts>
+    <user>Johana</user>
+    <text>-e allows it to be editable</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:48:55.367115</ts>
+    <user>Johana</user>
+    <text>it creates symlinks to where your package exists to the site-packages dir so that you can edit the files and see the changes.</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:49:12.372421</ts>
+    <user>Johnathon</user>
+    <text>hmm</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:49:15.373394</ts>
+    <user>Johnathon</user>
+    <text>so I need to reinstall it</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:49:59.388056</ts>
+    <user>Johana</user>
+    <text>you can install it again on top (i think).</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:50:12.392440</ts>
+    <user>Johana</user>
+    <text>but it’s probably safer to uninstall first</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:50:24.396579</ts>
+    <user>Johnathon</user>
+    <text>okay</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:53:25.456731</ts>
+    <user>Johnathon</user>
+    <text>`mypackage should either be a path to a local project or a VCS url beginning with svn+, git+, hg+, or bzr+`</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:53:44.462885</ts>
+    <user>Johana</user>
+    <text>is it local?</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:54:20.475203</ts>
+    <user>Johnathon</user>
+    <text>no</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:55:28.497320</ts>
+    <user>Johana</user>
+    <text>hmmm.. this package is on pypi?</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:55:50.504637</ts>
+    <user>Johana</user>
+    <text>you’re going to want a local copy of whatever package this is. if you are editing it and expecting to see the changes.</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:57:31.538030</ts>
+    <user>Johana</user>
+    <text>for example lets say this is my project dir.
+
+```
+|--- requests
+|--- my_awesome_app
+```</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:58:07.550251</ts>
+    <user>Johana</user>
+    <text>these are two python packages. requests has been cloned down from github but i would like to edit it separately and see the changes in `my_awesome_app`</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:58:29.557761</ts>
+    <user>Johana</user>
+    <text>i would go into the `my_awesome_app` dir and activate the virtualenv.</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T14:58:48.564247</ts>
+    <user>Johana</user>
+    <text>then type `pip install -e "../requests"`</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:00:14.594016</ts>
+    <user>Johnathon</user>
+    <text>virtualenv?</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:00:41.604200</ts>
+    <user>Johnathon</user>
+    <text>uuuh let me see if I can figure something out by cloning the repo</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:02:43.644995</ts>
+    <user>Johana</user>
+    <text>yes, a virtualenv is short for “virtual environment” it basically makes a copy of your python binaries and places them in a separate location (again using symlinks). This separate location acts as an isolated environment in which you install dependencies/packages. What you gain from this is the ability to only have the packages and package versions you need for that particular project.</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:03:49.666411</ts>
+    <user>Johana</user>
+    <text>if you are using python3 it comes with virtualenv capabillity</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:04:40.683049</ts>
+    <user>Johnathon</user>
+    <text>does `pip install` look for any particular file?</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:04:56.687729</ts>
+    <user>Johana</user>
+    <text>pip install will be looking for a `setup.py` file in the root of the package.</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:05:12.692882</ts>
+    <user>Johnathon</user>
+    <text>great</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:05:15.693595</ts>
+    <user>Johnathon</user>
+    <text>I think I got this</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:05:51.705221</ts>
+    <user>Johana</user>
+    <text>:thumbsup:</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:06:58.726057</ts>
+    <user>Johana</user>
+    <text>it takes a bit to get used to. virtualenvs, pip, and so forth but once you get the process down it will be second nature.</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:07:31.736467</ts>
+    <user>Johana</user>
+    <text>and once you start working with multiple projects with different requirements/dependencies and even python versions you’ll see why this extra stuff exists.</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:08:36.755996</ts>
+    <user>Johnathon</user>
+    <text>hey it worked!</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:08:39.757023</ts>
+    <user>Johana</user>
+    <text>the important thing is to try and start using these practices early on so that they become habit as they are typically used by python developers.</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:26:53.079587</ts>
+    <user>Johnathon</user>
+    <text>it actually really works!</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:27:14.085581</ts>
+    <user>Johnathon</user>
+    <text>this is going to be my first pull request</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:27:18.086938</ts>
+    <user>Johnathon</user>
+    <text>thank you so much &lt;@Johana&gt;</text>
+  </message>
+  <message conversation_id="5">
+    <ts>2017-06-16T15:27:45.095365</ts>
+    <user>Johana</user>
+    <text>that’s fantastic. i’m glad i could help.</text>
+  </message>
+  <message conversation_id="6">
+    <ts>2017-06-16T17:34:35.178224</ts>
+    <user>Winnifred</user>
+    <text>Does anyone have a pro tip for freeing up disk space on a SSD?</text>
+  </message>
+  <message conversation_id="6">
+    <ts>2017-06-16T17:35:10.185740</ts>
+    <user>Ciera</user>
+    <text>links</text>
+  </message>
+  <message conversation_id="6">
+    <ts>2017-06-16T17:35:18.187577</ts>
+    <user>Beula</user>
+    <text>`rm -rf /`</text>
+  </message>
+  <message conversation_id="7">
+    <ts>2017-06-16T17:54:52.428129</ts>
+    <user>Suellen</user>
+    <text>BleachBit</text>
+  </message>
+  <message conversation_id="7">
+    <ts>2017-06-16T17:55:17.433072</ts>
+    <user>Suellen</user>
+    <text>and ZFS</text>
+  </message>
+  <message conversation_id="7">
+    <ts>2017-06-16T17:55:29.435318</ts>
+    <user>Suellen</user>
+    <text>(compression is freeing space, right?)</text>
+  </message>
+  <message conversation_id="7">
+    <ts>2017-06-16T17:56:18.444833</ts>
+    <user>Beula</user>
+    <text>Depends on what OS, but on mac there is a diskutility thing that is used to erase free space, I have seen that reclaim a bit. Also cleaning up a docker cache, if you use docker</text>
+  </message>
+  <message conversation_id="8">
+    <ts>2017-06-17T01:48:00.696199</ts>
+    <user>Reda</user>
+    <text>I want to use setattr inside a class’s init method. Should I use it on `self` or `self.__dict__` ?</text>
+  </message>
+  <message conversation_id="9">
+    <ts>2017-06-17T02:49:27.844244</ts>
+    <user>Natividad</user>
+    <text>Hey guys for my django web app I'm trying to figure out why my page went from working to a page not found error. It's saying:
+Page not found (404) Request Method: GET Request URL: .... Using the URLconf defined in EMC_site.urls, Django tried these URL patterns, in this order: $queue_system/ $admin/ The empty path didn't match any of these. You're seeing this error because you have DEBUG = True in your Django settings file. Change that to False, and Django will display a standard 404 page.
+but it WAS JUST WORKING. I didn't change any code just came home from school. I found that the interpreter was no longer set to python 3.6, it wasn't set to anything so I'm wondering if other things may have changed? Thanks for any help! I'm hoping it is a commonly known problem if something is just working and then starts to give you this error if you come one and off wifi or something. Another one of my projects happens to be having the same problem. I also tried typing /admin or /queue_system after the web address too. Neither worked.</text>
+  </message>
+  <message conversation_id="8">
+    <ts>2017-06-17T05:11:52.202896</ts>
+    <user>Suellen</user>
+    <text>&lt;@Reda&gt; 
+```
+&amp;gt;&amp;gt;&amp;gt; class A:
+...   def __init__(self):
+...     setattr(self, 'a', 5)
+... 
+&amp;gt;&amp;gt;&amp;gt; a = A()
+&amp;gt;&amp;gt;&amp;gt; vars(a)
+{'a': 5}
+&amp;gt;&amp;gt;&amp;gt; ```</text>
+  </message>
+  <message conversation_id="9">
+    <ts>2017-06-17T06:58:32.470014</ts>
+    <user>Alvin</user>
+    <text>&lt;@Natividad&gt; are you running it in a virtual env?</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T11:59:23.442483</ts>
+    <user>Staci</user>
+    <text>Can you edit an active/open excel doc in python?</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:00:57.450978</ts>
+    <user>Meg</user>
+    <text>whats the use case?</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:01:11.452026</ts>
+    <user>Meg</user>
+    <text>you could, but changes wouldn't be replicated</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:01:43.454125</ts>
+    <user>Meg</user>
+    <text>and trying to keep changes in sync between the excel program and the python program would be a headache</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:02:00.455358</ts>
+    <user>Meg</user>
+    <text>so, I'd say this is something that you could do in theory, but I'd not bother</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:03:50.462817</ts>
+    <user>Staci</user>
+    <text>Yea, I have a client who wants to add rows to a work sheet as he makes selections and I assume he'd like the worksheet open to see the changes. I told him I could just do it in vba but he'd rather have a separate:face_with_rolling_eyes: program apparently.</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:04:17.464628</ts>
+    <user>Staci</user>
+    <text>How would I go about it, if he insists?</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:04:46.466559</ts>
+    <user>Staci</user>
+    <text>I thought you'd run into the same issue as having a workbook open by two different people at the same time</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:10:17.488424</ts>
+    <user>Winnifred</user>
+    <text>&lt;@Staci&gt;, I think it’s possible with A LOT of work. I don’t know if there are libraries in Python that actually allow you to open and edit without saving a new version. You can copy an existing workbook, make changes and save that one over the old one.</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:10:33.489602</ts>
+    <user>Meg</user>
+    <text>google docs :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:10:50.490703</ts>
+    <user>Winnifred</user>
+    <text>&lt;@Meg&gt;, my thoughts exactly</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:10:54.490945</ts>
+    <user>Meg</user>
+    <text>or office 365</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:11:10.491964</ts>
+    <user>Meg</user>
+    <text>those already have collaboration built into them</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:11:15.492230</ts>
+    <user>Meg</user>
+    <text>why re-invent the wheel</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:11:35.493628</ts>
+    <user>Meg</user>
+    <text>and end up handing the client a 10K bill for development time</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:11:42.494050</ts>
+    <user>Winnifred</user>
+    <text>haha</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:13:25.500774</ts>
+    <user>Winnifred</user>
+    <text>&lt;@Staci&gt;, if you’re still keen ~to~ on trying, the best library i’ve seen so far for pretty formatting/excel writing is &lt;http://xlsxwriter.readthedocs.io/&gt;</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:14:50.506276</ts>
+    <user>Suellen</user>
+    <text>Actually, I remember pywin32 can do stuff with Excel documents.</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:15:11.507883</ts>
+    <user>Suellen</user>
+    <text>And bonus: you *can* access already opened documents</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:15:17.508270</ts>
+    <user>Suellen</user>
+    <text>But that's crazy of course.</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T12:16:42.513838</ts>
+    <user>Staci</user>
+    <text>Yea, I've worked with excel before, but never on an open document.</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-17T23:39:00.611201</ts>
+    <user>Alvin</user>
+    <text>&lt;@Staci&gt; I have done something similar by feeding the worksheet live data and cells update automatically as new data comes in. But I used excel dev tools. I dont think one can edit an open excel sheet otherwise.</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-18T01:38:14.880624</ts>
+    <user>Marcie</user>
+    <text>yeah the only real live option is to write some awful VBA glue in the excel to speak to something external via python</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-18T01:39:44.883388</ts>
+    <user>Marcie</user>
+    <text>it's my eternal hope that they at least put in some sort of c# or powershell automation into excel at some point but I've been hoping for like 10 years now :(</text>
+  </message>
+  <message conversation_id="11">
+    <ts>2017-06-18T03:09:16.067893</ts>
+    <user>Hermina</user>
+    <text>hi folks, i got trouble while trying pandas, how to slice a dataframe using  Int64Index?
+I’m search an index base on value ```id = df.loc[df['time'] ==1496587067]``` Then I got an `Index` object `id`, I want to get 10 elms before that index. Which way I should go?</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-18T06:11:04.503479</ts>
+    <user>Meg</user>
+    <text>&lt;@Winnifred&gt; not exactly.  xlsxwriter is only for creating and writing to excel files.  It can't open and read from existing files</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-18T06:11:47.505301</ts>
+    <user>Meg</user>
+    <text>right there at the top of the FAQ &lt;http://xlsxwriter.readthedocs.io/faq.html&gt;</text>
+  </message>
+  <message conversation_id="10">
+    <ts>2017-06-18T06:12:15.506366</ts>
+    <user>Meg</user>
+    <text>&amp;gt;&amp;gt;&amp;gt;Can XlsxWriter use an existing Excel file as a template?
+No.
+
+XlsxWriter is designed only as a file writer. It cannot read or modify an existing Excel file.</text>
+  </message>
+  <message conversation_id="12">
+    <ts>2017-06-18T08:45:28.896655</ts>
+    <user>Gabrielle</user>
+    <text>how do I get an elastic IP to my ec2 instance? the instance is already running and when I click on it’s description. It’s empty</text>
+  </message>
+  <message conversation_id="13">
+    <ts>2017-06-18T09:07:50.962804</ts>
+    <user>Thomasina</user>
+    <text>before a user account can be created in my app it checks whether someone with the same username exists, and then whether someone with the same email has already registered, as both of these are supposed to be unique. Do I really need to check these individually? I know the insert query will fail if the values aren't unique since the columns are set to `unique`, but is there a way to know _which_ one caused the error, so that for example I can tell the user whether their username is taken or whether their email address is already registered.</text>
+  </message>
+  <message conversation_id="13">
+    <ts>2017-06-18T09:13:02.978147</ts>
+    <user>See</user>
+    <text>&lt;@Thomasina&gt; your DB will throw an Integrity error with the name of the field in the message. So you can probably parse that one to find out. It could be easier if you are using some ORM but I am not sure.</text>
+  </message>
+  <message conversation_id="14">
+    <ts>2017-06-18T09:25:14.012824</ts>
+    <user>Mirna</user>
+    <text>&lt;@Hermina&gt; Hi. How about this snippet:
+```
+import pandas as pd
+
+l_num = [num for num in range(10)]
+
+df = pd.DataFrame({
+    'num': l_num
+}, columns=['num'])
+
+l_id = df.loc[df['num'] == 5]
+first_match_id = l_id.index.get_values()[0]
+print(df[first_match_id - 5:first_match_id])
+```</text>
+  </message>
+  <message conversation_id="15">
+    <ts>2017-06-18T09:25:27.013390</ts>
+    <user>Mariano</user>
+    <text>&lt;@Reda&gt; Just use self</text>
+  </message>
+  <message conversation_id="14">
+    <ts>2017-06-18T09:51:30.089911</ts>
+    <user>Hermina</user>
+    <text>Thanks, I thought there will be a shorter way rather than get the Int index, and slice it with int type :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="14">
+    <ts>2017-06-18T10:02:55.127199</ts>
+    <user>Mirna</user>
+    <text>Base on your conditional. It may has many matches id. So i think this maybe the shortest way :slightly_smiling_face:.</text>
+  </message>
+  <message conversation_id="14">
+    <ts>2017-06-18T11:30:07.422501</ts>
+    <user>Winnifred</user>
+    <text>&lt;@Meg&gt; yep, agreed. I mentioned open and edit wasn’t possible in my first comment (at least with the popular python excel libs).</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T11:46:34.479472</ts>
+    <user>Corrine</user>
+    <text>hey team, soz for a really noob question, i use python 3.6 but need 3.5 in order to use one the libraries, what shall i do? :grimacing:
+i thought that virtualenv has to be helpful but i'm stuck somehow :(</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:01:18.531351</ts>
+    <user>Beula</user>
+    <text>What breaking changes keep the library from working with 3.6? I can't think of any from the changelog </text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:05:48.547424</ts>
+    <user>Corrine</user>
+    <text>hey &lt;@Beula&gt; thnx for your response, apparently mysql-connector doesn't work on 3.6</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:06:13.548711</ts>
+    <user>Deann</user>
+    <text>Follow this: &lt;http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/&gt;</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:06:25.549416</ts>
+    <user>Deann</user>
+    <text>where it says: export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:06:33.549837</ts>
+    <user>Deann</user>
+    <text>use this command: export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.5</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:06:52.551064</ts>
+    <user>Deann</user>
+    <text>then activate the virtual enviroment with source my_project/bin/activate</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:07:08.552095</ts>
+    <user>Beula</user>
+    <text>Did you try it &lt;@Corrine&gt; or is that just what the docs say. There isn't any reason it shouldn't unless they depend on dicts being unordered or something like that.</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:07:20.552812</ts>
+    <user>Corrine</user>
+    <text>yeap I’ve tried it</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:07:26.553165</ts>
+    <user>Deann</user>
+    <text>(Note that you can change the name "my_project" to anything else you want to write as the name of your virtual enviroment)</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:07:56.554721</ts>
+    <user>Beula</user>
+    <text>What's the error? In any case, &lt;@Deann&gt; 's solution should work if you have python 3.5 installed </text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:09:36.560670</ts>
+    <user>Beula</user>
+    <text>I'd probably use `which python3.5` so it grabs which is in your path (for example on osx it's probably at /usr/local/bin</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:10:22.563638</ts>
+    <user>Corrine</user>
+    <text>error message: Failed to build mysql-connector
+Installing collected packages: mysql-connector
+  Running setup.py install for mysql-connector ... error
+    Complete output from command /usr/local/opt/python3/bin/python3.6 -u -c “import setuptools, tokenize;__file__=‘/private/var/folders/tb/4df8hrw97hs40qhx0jmklvzw0000gr/T/pip-build-pa9ighsx/mysql-connector/setup.py’;f=getattr(tokenize, ‘open’, open)(__file__);code=f.read().replace(‘\r\n’, ‘\n’);f.close();exec(compile(code, __file__, ‘exec’))” install --record /var/folders/tb/4df8hrw97hs40qhx0jmklvzw0000gr/T/pip-rc6qs_md-record/install-record.txt --single-version-externally-managed --compile:</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:27:14.621419</ts>
+    <user>Meg</user>
+    <text>Isn't mysql-connector python 2 only?</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:27:26.622221</ts>
+    <user>Corrine</user>
+    <text>doesn’t seem like it</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:27:35.622816</ts>
+    <user>Corrine</user>
+    <text>3.2 3.3 3.4</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:27:47.623424</ts>
+    <user>Corrine</user>
+    <text>which one are you using when you have to use MySQL?</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:34:36.648190</ts>
+    <user>Meg</user>
+    <text>I haven't used mysql with 3.6</text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:34:44.648582</ts>
+    <user>Meg</user>
+    <text>Only postgres </text>
+  </message>
+  <message conversation_id="16">
+    <ts>2017-06-18T12:42:12.673783</ts>
+    <user>Corrine</user>
+    <text>roger thnx &lt;@Meg&gt;</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:36:34.080758</ts>
+    <user>Rolf</user>
+    <text>Regarding Python Classes. How do we create classes (along with inheritance) to be able to do something like, Class().Function(data).toJSON 
+toJSON being a @property function.
+
+So really I'm looking to take the return of Class().Function(data) and pass it to the toJSON property to format the data.
+
+Anyone have an idea?</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:38:36.088133</ts>
+    <user>Marcie</user>
+    <text>&lt;@Rolf&gt; did you mean like chaining methods?</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:38:45.088736</ts>
+    <user>Rolf</user>
+    <text>Yes.</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:39:29.091438</ts>
+    <user>Rolf</user>
+    <text>I've looked into @property methods @staticmethods</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:39:33.091648</ts>
+    <user>Rolf</user>
+    <text>Just can't figure it out</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:40:13.093959</ts>
+    <user>Marcie</user>
+    <text>`@staticmethod` just means a function doesn't require an instance of itself to operate on</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:40:35.095376</ts>
+    <user>Marcie</user>
+    <text>the key to chaining methods is that you have to return a copy of `self` on chainable methods</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:41:33.098660</ts>
+    <user>Rolf</user>
+    <text>What do you mean</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:42:37.102285</ts>
+    <user>Marcie</user>
+    <text>```
+class Foo:
+    def __init__(self):
+        self.data = [] # whatever your initial data here would be
+        return self
+    def Function(self, data):
+        self.data = do_thing_with_data(data)
+        return self
+    def toJSON(self):
+        return json.dumps(self.data)
+```</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:43:03.103799</ts>
+    <user>Marcie</user>
+    <text>something like that would have basic chainable class init and `Function` methods</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:43:39.105964</ts>
+    <user>Rolf</user>
+    <text>like just the fuction needs something like this?
+''' 
+class CLASS(object):
+    _x = None
+    def __init__(self):
+        pass
+    
+    def something_to_do(self, var1, var2):
+        x = var1 + var2
+        return x
+    
+    @property
+    def toFloat(self):
+        return float(_x)
+    '''</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:44:03.107483</ts>
+    <user>Beula</user>
+    <text>```
+class Foo:
+    def bar(self):
+        # do work
+        return self
+
+    def baz(self):
+        # do other stuff
+        return self
+
+    @property
+    def json(self):
+        return self.__dict__
+
+Foo().bar().baz().json
+```</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:44:16.108196</ts>
+    <user>Rolf</user>
+    <text>Awesome!</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:44:24.108703</ts>
+    <user>Rolf</user>
+    <text>I didn't try that ... why didn't I try that?</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:45:42.114187</ts>
+    <user>Rolf</user>
+    <text>Hmm this didn't work. 
+```class CLASS(object):
+    _x = None
+    def __init__(self):
+        pass
+    
+    def something_to_do(self, var1, var2):
+        x = var1 + var2
+        return x
+    
+    @property
+    def toFloat(self):
+        return float(_x)
+    
+    
+print(CLASS().something_to_do(1,2).toFloat)```</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:46:08.115788</ts>
+    <user>Rolf</user>
+    <text>```Traceback (most recent call last):
+  File "Untitled 2.py", line 15, in &amp;lt;module&amp;gt;
+    print(CLASS().something_to_do(1,2).toFloat)
+AttributeError: 'int' object has no attribute 'toFloat'
+```</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:46:19.116468</ts>
+    <user>Marcie</user>
+    <text>your `return x` needs to be `return self`</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:46:44.117897</ts>
+    <user>Marcie</user>
+    <text>because `return x` is just returning the result of `var1 + var2`, which is just an int</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:47:17.120020</ts>
+    <user>Rolf</user>
+    <text>```class CLASS(object):
+    _x = None
+    def __init__(self):
+        pass
+    
+    def something_to_do(self, var1, var2):
+        _x = var1 + var2
+        return self
+    
+    @property
+    def toFloat(self):
+        return float(_x)
+    
+    
+print(CLASS().something_to_do(1,2).toFloat)
+
+```</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:47:27.120603</ts>
+    <user>Rolf</user>
+    <text>```Traceback (most recent call last):
+  File "Untitled 2.py", line 15, in &amp;lt;module&amp;gt;
+    print(CLASS().something_to_do(1,2).toFloat)
+  File "Untitled 2.py", line 12, in toFloat
+    return float(_x)
+NameError: name '_x' is not defined
+```</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:48:10.123113</ts>
+    <user>Marcie</user>
+    <text>ahh, so `_x` in that scope doesn't exist</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:48:20.123690</ts>
+    <user>Marcie</user>
+    <text>that will need to be `self._x = var1 + var2`</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:49:02.126066</ts>
+    <user>Rolf</user>
+    <text>Wow .. ok .. that one I knew .. just too focused on other things ..</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:49:12.126627</ts>
+    <user>Rolf</user>
+    <text>Just completely missed it like a noob.</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:49:36.128093</ts>
+    <user>Rolf</user>
+    <text>yup .. perfect .. thanks man.</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:49:48.128870</ts>
+    <user>Rolf</user>
+    <text>Returning the self was what I was missing.</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:49:51.129085</ts>
+    <user>Rolf</user>
+    <text>thanks</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:52:22.138560</ts>
+    <user>Marcie</user>
+    <text>no problem!</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:52:30.139086</ts>
+    <user>Marcie</user>
+    <text>its okay, method chaining is a bit of an odd thing to work out at first</text>
+  </message>
+  <message conversation_id="17">
+    <ts>2017-06-18T19:55:16.149262</ts>
+    <user>Rolf</user>
+    <text>Yeah. Just didn't occur to me to pass the object along.</text>
+  </message>
+  <message conversation_id="18">
+    <ts>2017-06-18T22:47:41.060122</ts>
+    <user>Hermina</user>
+    <text>If we know it unique, on that col, can we do it cleaner? Anyway i’m vnmese :wink:</text>
+  </message>
+  <message conversation_id="19">
+    <ts>2017-06-19T04:00:07.437397</ts>
+    <user>Pasquale</user>
+    <text>Has anyone come across this issue while using `peewee` or `PyMySQL`?
+
+&lt;https://github.com/coleifer/peewee/issues/1296&gt;
+
+Help pls!!</text>
+  </message>
+  <message conversation_id="20">
+    <ts>2017-06-19T04:06:19.526355</ts>
+    <user>Jessie</user>
+    <text>I have a file( test.txt ) which contains a no. and i want to store that no. in a variable</text>
+  </message>
+  <message conversation_id="20">
+    <ts>2017-06-19T04:06:36.530389</ts>
+    <user>Jessie</user>
+    <text>new to python</text>
+  </message>
+  <message conversation_id="20">
+    <ts>2017-06-19T04:10:02.577799</ts>
+    <user>Mirna</user>
+    <text>&lt;@Jessie&gt; Can you declare your problem a bit?
+Like given a little example.</text>
+  </message>
+  <message conversation_id="20">
+    <ts>2017-06-19T04:20:34.728020</ts>
+    <user>Vada</user>
+    <text>&lt;@Jessie&gt; this sounds like you have quite a basic problem (opening and reading a file, finding the right value and storing it)</text>
+  </message>
+  <message conversation_id="20">
+    <ts>2017-06-19T04:21:34.742763</ts>
+    <user>Vada</user>
+    <text>But considering you are new to the language it is probably worth you doing an online tutorial to learn more about python. We could try and help you but there will  likely be more questions and you would be better served by a more formal resource.</text>
+  </message>
+  <message conversation_id="20">
+    <ts>2017-06-19T04:28:03.838294</ts>
+    <user>Jessie</user>
+    <text>actually i want to write a script that mail me if root partition is motr than 90% in use...i am fetching that percentage using awk and then appending it to a file and i want to read that file and save that percentage in a variable.. so that i can do if elase on that</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:32:31.905593</ts>
+    <user>Aimee</user>
+    <text>hi. what is the most pythonic/efficient way to check for 2 conditions as in:
+
+i have 3 string-templates
+`template1 = 'Main'` 
+`template2 = 'Other'`
+`template3 = 'Final'` 
+
+- if `template1` is `Main` and its length &amp;lt; 10, take `template1`, otherwise take `template2` and check its length and if thats too long, take `template3` (each string can be dynamic, so that sometimes `Main` is shorter and sometimes the last. but it should always start by checking `Main`)</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:34:22.932783</ts>
+    <user>Aimee</user>
+    <text>(it should be easy for the experts out there but i cant seem to get my head around it - ideally without a `Class` or `lambda` function)</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:37:24.977371</ts>
+    <user>Suellen</user>
+    <text>length &amp;lt; 10?</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:37:47.982885</ts>
+    <user>Suellen</user>
+    <text>if it's main, then its length is 4, right?</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:40:11.017906</ts>
+    <user>Aimee</user>
+    <text>sorry for the confusion. i tried to include all necessary information. the templates are just names and part of a dict which contains the string --&amp;gt; like: 
+`main_template = {'string' = 'foo', 'template' = 'Main'}`
+`other_template = {'string' = 'bar', 'template' = 'Other'}`
+`final_template = {‘string’ = ‘toto’, ‘template’ = ‘Final’}`</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:42:18.049523</ts>
+    <user>Aimee</user>
+    <text>&lt;@Suellen&gt; makes more sense now?</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:42:38.054548</ts>
+    <user>Suellen</user>
+    <text>yeah</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:43:46.071465</ts>
+    <user>Suellen</user>
+    <text>```
+def take_template(*args):
+    for template in args:
+        if template['Template'] == 'Main':
+            return template
+
+        if len(template) &amp;lt; 10:
+            return template
+
+    return template
+```</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:43:49.072252</ts>
+    <user>Suellen</user>
+    <text>how about that</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:44:11.077563</ts>
+    <user>Suellen</user>
+    <text>change appropriately</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:49:13.153410</ts>
+    <user>Aimee</user>
+    <text>thanks &lt;@Suellen&gt;. however i quite dont understand how the other templates are used here in their order. maybe very beginner question</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:49:53.163722</ts>
+    <user>Suellen</user>
+    <text>`for template in args` -- loop over all passed arguments (in order, as they are positional arguments)</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:50:17.169924</ts>
+    <user>Suellen</user>
+    <text>return the first found main template, or the first found "len&amp;lt;10" template</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T04:50:25.172234</ts>
+    <user>Suellen</user>
+    <text>otherwise just return the last one</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T11:53:56.824622</ts>
+    <user>Jessie</user>
+    <text>No idea why i am getting two outputs........
+"""
+"""</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T11:53:58.825292</ts>
+    <user>Jessie</user>
+    <text>eccentric@debian:~/Downloads$ cat test.py 
+
+import os
+DISK_SPACE = os.system("df -Th | grep /dev/sda6 | awk '{print $6}' | cut -d'%' -f1")
+print DISK_SPACE
+eccentric@debian:~/Downloads$ df -Th | grep /dev/sda6 | awk '{print $6}' | cut -d'%' -f1
+80
+eccentric@debian:~/Downloads$ python test.py 
+80
+0
+eccentric@debian:~/Downloads$</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T11:55:30.863413</ts>
+    <user>Suellen</user>
+    <text>`os.system` returns 0</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T11:55:37.866310</ts>
+    <user>Suellen</user>
+    <text>i. e. successful result</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T11:56:32.889377</ts>
+    <user>Suellen</user>
+    <text>`os.system` calls a program (or a number of them) that you specify, and they print to the terminal; then `os.system` returns 0, because everything was successful; then you print `DISK_SPACE` and that's your 0.</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T11:57:08.904234</ts>
+    <user>Jessie</user>
+    <text>what if i dont want to have that 0</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T11:57:18.908764</ts>
+    <user>Jessie</user>
+    <text>i just want to have size of my disk</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T11:57:44.919724</ts>
+    <user>Suellen</user>
+    <text>don't `print DISK_SPACE`</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T11:58:28.938103</ts>
+    <user>Jessie</user>
+    <text>i can do if else on the basis of DISK_SPACE and this 0 wont interrupt me ????</text>
+  </message>
+  <message conversation_id="21">
+    <ts>2017-06-19T11:59:26.962872</ts>
+    <user>Suellen</user>
+    <text>... I don't understand.</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:01:08.009968</ts>
+    <user>Beula</user>
+    <text>Why bother writing to a file and then having python read it and email? Unless you are using that file for other usages, it's probably easiest to just call the subprocess from python and email based on your condition.</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:04:05.083613</ts>
+    <user>Jessie</user>
+    <text>Now i am not printing. I wonder why it's still printing 80
+"""
+import os
+DISK_SPACE = os.system("df -Th | grep /dev/sda6 | awk '{print $6}' | cut -d'%' -f1")
+
+if DISK_SPACE &amp;gt; 90:
+    print "warning"
+else:
+    print "everything is fine"
+eccentric@debian:~/Downloads$ python test.py 
+80
+everything is fine
+"""</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:05:10.110085</ts>
+    <user>Suellen</user>
+    <text>because os.system just spawns a bunch of processes with current context</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:05:19.113661</ts>
+    <user>Suellen</user>
+    <text>`df` prints to the terminal</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:05:45.124545</ts>
+    <user>Jessie</user>
+    <text>actually i just want to save that output to DISK_SIZE variable</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:05:46.124816</ts>
+    <user>Beula</user>
+    <text>please format your code, use backticks on both sides instead of quotes:  ` ``` ` &lt;@Jessie&gt;</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:07:02.154690</ts>
+    <user>Jessie</user>
+    <text>backtics says syntax error</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:07:14.158948</ts>
+    <user>Beula</user>
+    <text>In slack, my friend</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:07:57.175749</ts>
+    <user>Jessie</user>
+    <text>oh...:grimacing:</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:08:00.177091</ts>
+    <user>Jessie</user>
+    <text>thanks</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:08:17.183560</ts>
+    <user>Beula</user>
+    <text>The short of it is this: `os.system` does not capture the stdout from the subprocess - you need to use the `subprocess` module: &lt;https://docs.python.org/3/library/subprocess.html#popen-constructor&gt;</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:09:52.219744</ts>
+    <user>Suellen</user>
+    <text>```
+import subprocess
+
+output = subprocess.check_output('df -h | fgrep udev', shell=True)
+print(repr(output))
+```</text>
+  </message>
+  <message conversation_id="23">
+    <ts>2017-06-19T12:11:15.251564</ts>
+    <user>Rikki</user>
+    <text>If I have an unknown # of properties that come from a JSON document that I want to attach to a Python class and then use that new class for every record moving forward, what's the best way to do that?  I was trying to grasp python class factories and was struggling a bit with it</text>
+  </message>
+  <message conversation_id="23">
+    <ts>2017-06-19T12:13:57.313279</ts>
+    <user>Suellen</user>
+    <text>wow, do you really want exactly that?</text>
+  </message>
+  <message conversation_id="23">
+    <ts>2017-06-19T12:14:02.315359</ts>
+    <user>Suellen</user>
+    <text>that's crazy!</text>
+  </message>
+  <message conversation_id="23">
+    <ts>2017-06-19T12:14:05.316486</ts>
+    <user>Suellen</user>
+    <text>```
+import json
+
+class A:
+    def __init__(self, json_data):
+        self.__dict__.update(json.loads(json_data))
+
+text = '{"a": 7, "b": 10, "flag": true}'
+a = A(text)
+print(vars(a))
+```</text>
+  </message>
+  <message conversation_id="22">
+    <ts>2017-06-19T12:14:24.323795</ts>
+    <user>Jessie</user>
+    <text>thanks</text>
+  </message>
+  <message conversation_id="23">
+    <ts>2017-06-19T12:14:53.334522</ts>
+    <user>Suellen</user>
+    <text>&lt;@Rikki&gt; If it's crazy but works, it's not crazy :wink:</text>
+  </message>
+  <message conversation_id="23">
+    <ts>2017-06-19T12:16:29.372204</ts>
+    <user>Suellen</user>
+    <text>(but actually it IS)</text>
+  </message>
+  <message conversation_id="23">
+    <ts>2017-06-19T12:19:57.450069</ts>
+    <user>Rikki</user>
+    <text>Well, the properties come from json source 1, and the attributes come from json source 2</text>
+  </message>
+  <message conversation_id="23">
+    <ts>2017-06-19T12:21:08.476918</ts>
+    <user>Rikki</user>
+    <text>so I want to just build out my template from source 1 and then loop through the thousands of records in source 2 with the template as my container.</text>
+  </message>
+  <message conversation_id="23">
+    <ts>2017-06-19T12:23:48.536435</ts>
+    <user>Rikki</user>
+    <text>the structure of the json is goofy though so i have to load it and process it separately from the standard .loads().  good times.</text>
+  </message>
+  <message conversation_id="24">
+    <ts>2017-06-19T13:26:22.915334</ts>
+    <user>Thelma</user>
+    <text>so I have a question is there a slack channel for bokeh or flask?</text>
+  </message>
+  <message conversation_id="24">
+    <ts>2017-06-19T13:26:37.920773</ts>
+    <user>Thelma</user>
+    <text>I have a question on integrating those two</text>
+  </message>
+  <message conversation_id="24">
+    <ts>2017-06-19T13:28:10.954328</ts>
+    <user>Meg</user>
+    <text>there is &lt;#C0LN2AD7T|flask&gt;</text>
+  </message>
+  <message conversation_id="24">
+    <ts>2017-06-19T13:28:14.955790</ts>
+    <user>Thelma</user>
+    <text>is this the place to ask?</text>
+  </message>
+  <message conversation_id="24">
+    <ts>2017-06-19T13:29:38.987218</ts>
+    <user>Thelma</user>
+    <text>&lt;@Meg&gt; Thank you :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="25">
+    <ts>2017-06-19T14:18:04.077695</ts>
+    <user>Meghan</user>
+    <text>I saw a YouTube video where someone used similar but for xml and made it where he could import classes defined in xml, it was pretty cool.</text>
+  </message>
+  <message conversation_id="25">
+    <ts>2017-06-19T14:18:21.084156</ts>
+    <user>Meghan</user>
+    <text>Sorry, that is to the above with json to class with variables.</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T14:53:42.873936</ts>
+    <user>Rona</user>
+    <text>what the best way to check if  the answer is yes and do something only of it yes</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:02:51.080889</ts>
+    <user>Rona</user>
+    <text>SyntaxError: unexpected EOF while parsing</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:06:48.166203</ts>
+    <user>Beula</user>
+    <text>&lt;@Rona&gt; can you give more context? Are you trying to read from user input, or check a value?</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:13:42.307182</ts>
+    <user>Rona</user>
+    <text>read from a user</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:16:18.360266</ts>
+    <user>Beula</user>
+    <text>So what do you have now</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:20:16.440515</ts>
+    <user>Rona</user>
+    <text>recent = int(raw_input("Provide a number: ") or num_len )</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:20:44.449355</ts>
+    <user>Rona</user>
+    <text>trying to learn also shutil.copy</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:20:44.449532</ts>
+    <user>Beula</user>
+    <text>Please be sure to use code formatting</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:20:50.451279</ts>
+    <user>Rona</user>
+    <text>oh</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:21:14.459174</ts>
+    <user>Beula</user>
+    <text>Break down your problem into small components, what is the current issue? "Provide a number" suggests to me that you are not looking for "yes"</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:21:27.463256</ts>
+    <user>Rona</user>
+    <text>nope</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:22:00.474488</ts>
+    <user>Rona</user>
+    <text>I am looking to see if some number was provided, if not use the full legth of the array</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:22:24.482455</ts>
+    <user>Beula</user>
+    <text>"the array" is pretty vague, I think you need to expand on your issue a bit more</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:22:32.484912</ts>
+    <user>Beula</user>
+    <text>&lt;https://stackoverflow.com/help/how-to-ask&gt;</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:23:05.495691</ts>
+    <user>Rona</user>
+    <text>let me think about this more on my own</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:23:10.497288</ts>
+    <user>Rona</user>
+    <text>thanks &lt;@Beula&gt;</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:23:31.504308</ts>
+    <user>Cleo</user>
+    <text>Sounds like you are trying to do an if statement</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:25:16.539397</ts>
+    <user>Rona</user>
+    <text>I think I figured a better way</text>
+  </message>
+  <message conversation_id="26">
+    <ts>2017-06-19T15:25:17.539930</ts>
+    <user>Rona</user>
+    <text>brb</text>
+  </message>
+  <message conversation_id="27">
+    <ts>2017-06-19T16:27:59.825530</ts>
+    <user>Lucilla</user>
+    <text>anyone worked with PyMC?</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T16:31:11.892227</ts>
+    <user>Meghan</user>
+    <text>So, I broke our mysql cluster, how's everyone else's day going?</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T16:31:22.896169</ts>
+    <user>Meghan</user>
+    <text>Apparently a query caused a table to lock and never unlock.</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T16:32:07.911742</ts>
+    <user>Beula</user>
+    <text>We had that during a deploy once &lt;@Meghan&gt; - someone's console had a lock on a table during a deploy and it got stuck.</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T16:32:32.920192</ts>
+    <user>Beula</user>
+    <text>You may ask "why does someone have production access to have a console open" - but that's beside the point :joy:</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T16:33:15.934791</ts>
+    <user>Meghan</user>
+    <text>With the data we are working with, it wouldn't surprise me if we ended up doing that.</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T16:33:34.940900</ts>
+    <user>Meghan</user>
+    <text>We have weekly cron jobs that truncate then insert hundreds of thousands of records.</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T16:35:16.975250</ts>
+    <user>Meghan</user>
+    <text>Unfortunately, much of the data we are working with isn't indexed when we get the data.</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T16:35:41.984268</ts>
+    <user>Beula</user>
+    <text>Dang, that is a bit of data.</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T16:38:30.042304</ts>
+    <user>Meghan</user>
+    <text>Would be nice to index it, but then those bulk inserts become insert or updates and would likely take a long time.</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T16:39:27.061620</ts>
+    <user>Beula</user>
+    <text>Was the fix pretty difficult today?</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T16:39:42.066582</ts>
+    <user>Meghan</user>
+    <text>Don't think he has it fixed yet. Thankfully, not my baby.</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T17:12:35.724418</ts>
+    <user>Beula</user>
+    <text>Any reason to roll your own test framework? It looks like one big issue is that you don't handle exceptions in the runner, so cleanup won't be guaranteed</text>
+  </message>
+  <message conversation_id="29">
+    <ts>2017-06-19T17:26:06.962261</ts>
+    <user>Thelma</user>
+    <text>has anyone used pyflot? how is compared to bokeh?</text>
+  </message>
+  <message conversation_id="30">
+    <ts>2017-06-19T19:48:01.768547</ts>
+    <user>Ouida</user>
+    <text>Can anyone explain why this works?
+```
+with open(path, 'rb') as file_:
+        for chunk in iter(lambda: file_.read(4096), b""):
+            hash_obj.update(chunk)
+```
+Specifically the `b""`?</text>
+  </message>
+  <message conversation_id="30">
+    <ts>2017-06-19T20:01:06.895198</ts>
+    <user>Beula</user>
+    <text>&lt;@Ouida&gt; the docs for `iter` explain it pretty well (&lt;https://docs.python.org/3/library/functions.html#iter&gt;).
+
+The second argument is a "sentinel" value, which will create the stop condition when the result of the callable (the lambda function) equals that value</text>
+  </message>
+  <message conversation_id="30">
+    <ts>2017-06-19T20:03:18.916710</ts>
+    <user>Beula</user>
+    <text>So each iteration it will check the result of the lambda against that value, if they're equal it raises `StopIteration`, a special built in exception to exit a loop.</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T20:04:53.931470</ts>
+    <user>Noemi</user>
+    <text>&lt;@Beula&gt; I handle exceptions in the real code, they are included in the "do some stuff, execute the actual test" comment. In any event, I thought it made sense to execute the tests this way, and I have a Jenkins job that that does so by executing main.py (each test case being called from within the main file). Really I'm just curious if that goes against any conventions or industry practices because I want to correct any bad habits. I don't really have a reason for rolling my own framework other than to get better at coding (this is my first coding job).</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T20:06:16.944144</ts>
+    <user>Beula</user>
+    <text>I'd say that, from experience, don't ever roll your own at work. That's free time stuff until you find a deficiency in community accepted frameworks (unittest or pytest, in the python world for the big couple). Every time I have rolled my own it has bitten me hard.</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T20:16:28.034983</ts>
+    <user>Beula</user>
+    <text>&lt;@Yessenia&gt; - the `illegal byte sequence` is from stderr of the subprocess, one of the pipes is getting something it can't handle. From the try local it's the `cut -c30`.</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T20:18:02.048628</ts>
+    <user>Beula</user>
+    <text>If you know you don't want whatever is from that, you can just use `stderr=subprocess.PIPE` and it will be captured (and not printed to the python console). Since from the console you will get bytes back, you'll need to decode and probably strip them</text>
+  </message>
+  <message conversation_id="30">
+    <ts>2017-06-19T20:18:23.051963</ts>
+    <user>Ouida</user>
+    <text>&lt;@Beula&gt; sure, but what is `b`? it’s not an identifier?</text>
+  </message>
+  <message conversation_id="30">
+    <ts>2017-06-19T20:18:48.055466</ts>
+    <user>Beula</user>
+    <text>`b''` is a bytes object</text>
+  </message>
+  <message conversation_id="30">
+    <ts>2017-06-19T20:19:06.058048</ts>
+    <user>Ouida</user>
+    <text>ohh</text>
+  </message>
+  <message conversation_id="30">
+    <ts>2017-06-19T20:19:25.061120</ts>
+    <user>Ouida</user>
+    <text>okay yeah that makes sense… ha</text>
+  </message>
+  <message conversation_id="30">
+    <ts>2017-06-19T20:19:42.063604</ts>
+    <user>Beula</user>
+    <text>You have a few of those: `r''` -&amp;gt; raw, `b''` -&amp;gt; bytes, `f''` -&amp;gt; f (format)-string</text>
+  </message>
+  <message conversation_id="30">
+    <ts>2017-06-19T20:21:46.080860</ts>
+    <user>Ouida</user>
+    <text>so `b''` is basically an empty byte object?</text>
+  </message>
+  <message conversation_id="28">
+    <ts>2017-06-19T20:22:35.087395</ts>
+    <user>Noemi</user>
+    <text>Are there any that you recommend for UI testing?</text>
+  </message>
+  <message conversation_id="30">
+    <ts>2017-06-19T20:23:33.095434</ts>
+    <user>Beula</user>
+    <text>Pretty much</text>
+  </message>
+  <message conversation_id="30">
+    <ts>2017-06-19T20:24:34.103682</ts>
+    <user>Beula</user>
+    <text>I use pytest for everything</text>
+  </message>
+  <message conversation_id="31">
+    <ts>2017-06-20T03:22:26.336120</ts>
+    <user>Anna</user>
+    <text>hi, all…i’ve got a strange problem with sqlalchemy, the full description is here &lt;https://stackoverflow.com/questions/44615074/sqlalchemy-increasing-memory-on-simple-query&gt;</text>
+  </message>
+  <message conversation_id="31">
+    <ts>2017-06-20T03:22:34.337668</ts>
+    <user>Anna</user>
+    <text>but I don’t understand if this problem is due to sqlalchemy or something related to python memory management</text>
+  </message>
+  <message conversation_id="32">
+    <ts>2017-06-20T04:11:08.012187</ts>
+    <user>Robbin</user>
+    <text>Hey guys does anyone know what `-rin` does in the context of `grep -rin "email" */log`</text>
+  </message>
+  <message conversation_id="32">
+    <ts>2017-06-20T04:14:28.061359</ts>
+    <user>Collette</user>
+    <text>&lt;@Robbin&gt; `man grep`</text>
+  </message>
+  <message conversation_id="32">
+    <ts>2017-06-20T04:15:06.070426</ts>
+    <user>Collette</user>
+    <text>Then press `h` to learn how to navigate and search</text>
+  </message>
+  <message conversation_id="32">
+    <ts>2017-06-20T07:24:27.898083</ts>
+    <user>Daniella</user>
+    <text>&lt;@Robbin&gt; -r = recursive / -i = ignore case / -n = print line number</text>
+  </message>
+  <message conversation_id="32">
+    <ts>2017-06-20T07:25:56.917350</ts>
+    <user>Robbin</user>
+    <text>&lt;@Daniella&gt; Thank you so much for that :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="32">
+    <ts>2017-06-20T07:33:09.012943</ts>
+    <user>Daniella</user>
+    <text>you are welcome</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:25:30.384514</ts>
+    <user>Cristine</user>
+    <text>Hey guys I'm a bit stuck with converting a string date to a datetime object getting this error:
+
+```  time data '2017-06-20T15:07:12+01:00' does not match format '%Y-%m-%dT%H:%M:%S%z' ```
+
+CODE:
+
+``` current_action_date = datetime.strptime(request.data['date'], "%Y-%m-%dT%H:%M:%S%z" ) ```
+
+request.data['date'] printed gives ``` 2017-06-20T15:07:12+01:00 ```
+
+Useing Django RestFramework on 3.6
+
+Any ideas what I am doing wrong?
+
+Thanks for any help you can provide ! I'm really baffled by this one !</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:28:51.472542</ts>
+    <user>Beula</user>
+    <text>Do you control the client code for this? Looks like the timestamp offset is the wrong format for `%z`. `+01:00` should be `+0100` iirc for that one </text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:29:54.500560</ts>
+    <user>Cristine</user>
+    <text>Yeah its from an android app. Ahhh thanks a million will figure out a way to change that !</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:30:52.527756</ts>
+    <user>Patty</user>
+    <text>that’s completely valid ISO 8601 formatting</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:31:11.535976</ts>
+    <user>Ciera</user>
+    <text>&lt;https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior&gt;</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:31:49.553048</ts>
+    <user>Ciera</user>
+    <text>you might want to check here if there is something for the `:`</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:31:54.555207</ts>
+    <user>Deedee</user>
+    <text>For datetime reference:
+&lt;https://docs.python.org/2/library/datetime.html&gt;</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:32:14.564530</ts>
+    <user>Patty</user>
+    <text>`	UTC offset in the form +HHMM or -HHMM (empty string if the object is naive).`</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:32:30.572018</ts>
+    <user>Patty</user>
+    <text>way to not conform to ISO standards :confused:</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:32:54.582542</ts>
+    <user>Beula</user>
+    <text>Yeah Joe is right, the colon should be valid, per the spec :(</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:33:19.593745</ts>
+    <user>Patty</user>
+    <text>&lt;@Deedee&gt; &lt;@Cristine&gt; is using 3.6, not python 2 :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:34:04.613629</ts>
+    <user>Patty</user>
+    <text>well looks like an opportunity to be a python contributor haha</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:34:15.618280</ts>
+    <user>Cristine</user>
+    <text>yeah i have no idea this isn't working !</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:34:38.628961</ts>
+    <user>Cristine</user>
+    <text>it should do it just going to filter the string on client side before marshaling it</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:35:01.638835</ts>
+    <user>Vada</user>
+    <text>&lt;@Patty&gt; you'll have to hack in both cases unless you want to break a *lot* of code</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:36:56.689365</ts>
+    <user>Patty</user>
+    <text>yeah i havent even looked at the source but im sure its not pretty</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:37:07.693991</ts>
+    <user>Patty</user>
+    <text>also i aint got no time for that i get married in 2 months from today</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:37:28.703620</ts>
+    <user>Ciera</user>
+    <text>or add another letter for the `:`</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:37:46.711277</ts>
+    <user>Ciera</user>
+    <text>like `%z` and `%Z`</text>
+  </message>
+  <message conversation_id="33">
+    <ts>2017-06-20T10:37:59.716791</ts>
+    <user>Deedee</user>
+    <text>&lt;@Patty&gt; congrats</text>
+  </message>
+  <message conversation_id="34">
+    <ts>2017-06-20T14:59:13.103205</ts>
+    <user>Meghan</user>
+    <text>Why is pycharm treating the name config as if it was a link?</text>
+  </message>
+  <message conversation_id="34">
+    <ts>2017-06-20T14:59:55.119222</ts>
+    <user>Beula</user>
+    <text>&lt;@Meghan&gt; can you provide more context?</text>
+  </message>
+  <message conversation_id="34">
+    <ts>2017-06-20T15:00:30.134445</ts>
+    <user>Meghan</user>
+    <text>```help(config)
+Traceback (most recent call last):
+  File "&amp;lt;input&amp;gt;", line 1, in &amp;lt;module&amp;gt;
+NameError: name 'config' is not defined```
+
+Opened the console, type config, and it becomes a link.</text>
+  </message>
+  <message conversation_id="34">
+    <ts>2017-06-20T15:01:05.148323</ts>
+    <user>Meghan</user>
+    <text>I do have a module in a directory named config, but other modules dont' get that treatment.</text>
+  </message>
+  <message conversation_id="34">
+    <ts>2017-06-20T15:01:31.159227</ts>
+    <user>Beula</user>
+    <text>If you click the link, does it take you there? Seems like that may be what they are _trying_ to do, and just miss the mark for others?</text>
+  </message>
+  <message conversation_id="34">
+    <ts>2017-06-20T15:01:32.159596</ts>
+    <user>Meghan</user>
+    <text>Clicking on the link doesn't do anything.</text>
+  </message>
+  <message conversation_id="34">
+    <ts>2017-06-20T15:01:39.162120</ts>
+    <user>Beula</user>
+    <text>weird ¯\_(ツ)_/¯</text>
+  </message>
+  <message conversation_id="34">
+    <ts>2017-06-20T15:04:37.230985</ts>
+    <user>Suellen</user>
+    <text>huh, funny</text>
+  </message>
+  <message conversation_id="34">
+    <ts>2017-06-20T15:07:09.287237</ts>
+    <user>Meghan</user>
+    <text>In the above, dreamer is the other library, so, idk. Interesting anyway. There is also a config.ini file in the directory.</text>
+  </message>
+  <message conversation_id="34">
+    <ts>2017-06-20T15:07:12.288093</ts>
+    <user>Beula</user>
+    <text>That is weird, mine doesn't for anything I see in my project</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:07:31.295355</ts>
+    <user>Britta</user>
+    <text>Hi to all! Can you help with my code, please? I cant upload images, thnks!
+"""def client_registration(request):
+    form = ClientForm(data=&lt;http://request.POST|request.POST&gt; or None)
+    userform = UserForm(data=&lt;http://request.POST|request.POST&gt; or None)
+    all_fintessclubs = Fitnessclub.objects.filter(is_active=True)
+    competitions = Competition.objects.filter(is_active=True)
+
+    if &lt;http://request.POST|request.POST&gt; and form.is_valid() and userform.is_valid():
+        userpost = userform.save()
+        post = form.save(commit=False)
+        upload_images = ['client_avatar' or 'image_portrait' or 'image_profile' or 'image_back']
+        for image in upload_images:
+            try:
+                post.image = request.FILES['%s'] % image
+            except KeyError:
+                pass
+        post.user = userpost
+        post.save()"""</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:10:13.353259</ts>
+    <user>Suellen</user>
+    <text>Sooo, what happens when you DO upload something?</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:11:30.380757</ts>
+    <user>Beula</user>
+    <text>&lt;@Britta&gt; can you please format your code (add three backticks on each side: ` ``` `)</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:11:49.387572</ts>
+    <user>Beula</user>
+    <text>read the intro doc for our standards :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:11:57.390147</ts>
+    <user>Suellen</user>
+    <text>oh</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:12:01.391698</ts>
+    <user>Suellen</user>
+    <text>what the..</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:12:42.406280</ts>
+    <user>Meghan</user>
+    <text>Going to run into a loop with these bots competing. :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:13:09.415310</ts>
+    <user>Beula</user>
+    <text>haha, looks like we haven't deprecated the slack response</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:13:52.430286</ts>
+    <user>Britta</user>
+    <text>&lt;@Suellen&gt; everything is up (text data) except images</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:15:55.473264</ts>
+    <user>Suellen</user>
+    <text>did you try to log the variables while you upload an image?</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:16:22.483305</ts>
+    <user>Suellen</user>
+    <text>e. g. at which point the state becomes different from what you expect?</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:17:02.497171</ts>
+    <user>Britta</user>
+    <text>I check in admin and there is no any</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:17:05.498149</ts>
+    <user>Suellen</user>
+    <text>what does `upload_images` look like? (log it to console)
+does the for loop work alright?</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:17:24.505072</ts>
+    <user>Suellen</user>
+    <text>how many times does it iterate, log it too</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:17:38.510092</ts>
+    <user>Suellen</user>
+    <text>I bet you'll find something strange right away if you log</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:18:15.522564</ts>
+    <user>Beula</user>
+    <text>&lt;@Britta&gt; Back ticks (above the tab key on the US/ISO keyboard):
+
+```
+def client_registration(request):
+    form = ClientForm(data=&lt;http://request.POST|request.POST&gt; or None)
+    userform = UserForm(data=&lt;http://request.POST|request.POST&gt; or None)
+    all_fintessclubs = Fitnessclub.objects.filter(is_active=True)
+    competitions = Competition.objects.filter(is_active=True)
+
+   if &lt;http://request.POST|request.POST&gt; and form.is_valid() and userform.is_valid():
+        userpost = userform.save()
+        post = form.save(commit=False)
+        upload_images = ['client_avatar' or 'image_portrait' or 'image_profile' or 'image_back']
+        for image in upload_images:
+            try:
+                post.image = request.FILES['%s'] % image
+            except KeyError:
+                pass
+        post.user = userpost
+        post.save()
+```</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:18:15.522778</ts>
+    <user>Britta</user>
+    <text>I understand your idea, thank you!</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T15:20:09.561662</ts>
+    <user>Britta</user>
+    <text>sorry, ok :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T16:58:06.658897</ts>
+    <user>Patty</user>
+    <text>One thing you're doing is changing the value of `post.image` each iteration of that loop</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T17:00:28.710541</ts>
+    <user>Patty</user>
+    <text>Is it `pass`ing each loop? Do any of those keys exist in `request.files`?</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T17:05:05.807608</ts>
+    <user>Patty</user>
+    <text>&lt;@Britta&gt; ^</text>
+  </message>
+  <message conversation_id="35">
+    <ts>2017-06-20T17:17:14.044706</ts>
+    <user>Mariano</user>
+    <text>you can add those file fields on your form &lt;@Britta&gt;. Then you can pas the `request.FILES` to the form constructor and it handles that for you.</text>
+  </message>
+  <message conversation_id="36">
+    <ts>2017-06-20T17:51:17.644296</ts>
+    <user>Temika</user>
+    <text>Anyone know if this is the right shorthand for a one liner? `featured_image=(n == selectedImageIndex)`</text>
+  </message>
+  <message conversation_id="36">
+    <ts>2017-06-20T17:51:29.647606</ts>
+    <user>Temika</user>
+    <text>n is from `enumerate` and would be `0` `1` `2`, etc. `selectedImageIndex` would be `1` in this case.</text>
+  </message>
+  <message conversation_id="36">
+    <ts>2017-06-20T17:51:42.651158</ts>
+    <user>Temika</user>
+    <text>Python doesn’t moan but it doesn’t seem to be working</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T17:59:34.778671</ts>
+    <user>Annalee</user>
+    <text>Is this the right channel to post novice Python questions?</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T17:59:43.781371</ts>
+    <user>Temika</user>
+    <text>Sure</text>
+  </message>
+  <message conversation_id="36">
+    <ts>2017-06-20T18:01:08.805842</ts>
+    <user>Annalee</user>
+    <text>Ok, cool. 
+I’m trying to learn more about `super()`
+
+Here’s a code snippet I’ve written:
+```
+class MyList(list):
+    def __len__(self):
+        print("calculating the total number of items in the list")
+        super(MyList, self).__len__()
+```
+And when I instantiate `MyList` I get the following error:
+`TypeError: an integer is required`
+
+what am I doing wrong?</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:04:29.858089</ts>
+    <user>Suellen</user>
+    <text>- `super(MyList, self).__len__()`</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:04:34.859461</ts>
+    <user>Suellen</user>
+    <text>+ `return super(MyList, self).__len__()`</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:05:07.867790</ts>
+    <user>Suellen</user>
+    <text>actually, what Python version are you targeting?</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:05:42.876732</ts>
+    <user>Suellen</user>
+    <text>`return super().__len__()` is much nicer :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:06:03.881929</ts>
+    <user>Temika</user>
+    <text>Instantiating in Python 3 with that code would be fine I think? But trying to do `x = MyList()` `x.len()` would return `AttributeError: 'MyList' object has no attribute 'len'`</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:06:20.886147</ts>
+    <user>Annalee</user>
+    <text>I’m using Python 2.7.x</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:06:31.889176</ts>
+    <user>Suellen</user>
+    <text>... come to think of it, if you don't do any processing at all, you can just skip this method</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:06:44.892362</ts>
+    <user>Suellen</user>
+    <text>if you don't implement it yourself, an original one will be used from `list`</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:07:23.902061</ts>
+    <user>Annalee</user>
+    <text>well I’m just practicing with `super`. Let’s say I want to log or print before `__len()__` is executed</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:08:19.915939</ts>
+    <user>Annalee</user>
+    <text>ok why do I have to use `return`?</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:10:03.941253</ts>
+    <user>Temika</user>
+    <text>You’re saying return the result of my parent classes `len` method.</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:11:41.964742</ts>
+    <user>Annalee</user>
+    <text>ok so I did this as well but no return was necessary:
+```
+class MyDict(dict):
+    def __setitem__(self, key, value):
+        print("adding key: {} and value: {}".format(key, value))
+        super(MyDict, self).__setitem__(key, value)
+
+    def __getattr__(self, key):
+        if key not in self:
+            return 'key not recognized'
+        else:
+            return self[key]
+
+```</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:12:18.973465</ts>
+    <user>Suellen</user>
+    <text>`setitem` doesn't return anything useful</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:12:29.976064</ts>
+    <user>Suellen</user>
+    <text>and there is a return statement in your `getattr` :))</text>
+  </message>
+  <message conversation_id="37">
+    <ts>2017-06-20T18:15:32.019286</ts>
+    <user>Annalee</user>
+    <text>ah I see</text>
+  </message>
+  <message conversation_id="38">
+    <ts>2017-06-20T18:26:48.172952</ts>
+    <user>Simon</user>
+    <text>What is the best way to convert a list to a dict? The only thing is I want to specify my keys from outside the list. So the list is basically the values of the dict and I will provide the keys separately.</text>
+  </message>
+  <message conversation_id="38">
+    <ts>2017-06-20T18:27:49.186401</ts>
+    <user>Suellen</user>
+    <text>```
+&amp;gt;&amp;gt;&amp;gt; values = ['one', 'two', 'three']
+&amp;gt;&amp;gt;&amp;gt; keys = [1, 2, 3]
+&amp;gt;&amp;gt;&amp;gt; d = dict(zip(keys, values))
+&amp;gt;&amp;gt;&amp;gt; d
+{1: 'one', 2: 'two', 3: 'three'}
+```</text>
+  </message>
+  <message conversation_id="38">
+    <ts>2017-06-20T18:30:31.222201</ts>
+    <user>Simon</user>
+    <text>Perfect exactly what I was looking for.</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:03:17.142439</ts>
+    <user>Blossom</user>
+    <text>Hey guys, I'm new to deploying django applications and I've been fighting an issue for two days now, could anyone help me with this? &lt;https://stackoverflow.com/questions/44666555/django-wsgi-no-module-named-site&gt; I just posted a question in stack overflow and I'm completely stuck at the moment</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:04:46.153047</ts>
+    <user>Beula</user>
+    <text>&lt;@Blossom&gt; I think you have a type-o in your question:
+
+```
+activate_this = os.path.join( PROJECT_DIR, 'env/shinra/bin', 'activate_this.py'$
+```
+
+The `$` is invalid and would cause a syntax error</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:05:57.161985</ts>
+    <user>Blossom</user>
+    <text>oh yeah let me edit that, thanks!</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:06:20.164867</ts>
+    <user>Beula</user>
+    <text>Otherwise, some questions:
+
+1. Where are you running the `python3 -i ...wsgi.py` command from? The app may not be in your PYTHONPATH
+2. Why are you not using  uwsgi or gunicorn to serve the app, vs trying to run it directly?</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:07:29.173192</ts>
+    <user>Blossom</user>
+    <text>ive tried running it from both /var/www/shinra/ and var/www/shinra/shinra</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:08:19.179039</ts>
+    <user>Blossom</user>
+    <text>I ran it with uwsgi and gunicorn both and was able to get them both to serve the app (without the static files) but I was never able to configure either apache or nginx correctly for my EC2 instance</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:08:34.180925</ts>
+    <user>Blossom</user>
+    <text>And the tutorials to configure either of those are old</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:14:12.219848</ts>
+    <user>Beula</user>
+    <text>If you're at all familiar with ansible, here is how I have my recent Django app served from gunicorn </text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:14:15.220278</ts>
+    <user>Beula</user>
+    <text>&lt;https://github.com/mrasband/ansible/blob/master/ottter.yml&gt;</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:16:37.236044</ts>
+    <user>Blossom</user>
+    <text>Oh no idea, but the line exec_start seems to be what I ran when I tried with gunicorn and that worked perfectly so being able to run that as a bash or something would be great</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:17:11.239657</ts>
+    <user>Blossom</user>
+    <text>My question there would be, is it ok to run the gunicorn command to start serving the app, store that command to run on server start and just use nginx to feed my static files?</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:17:59.245220</ts>
+    <user>Blossom</user>
+    <text>But now that I remember I couldn't do both at the same time, I could only run gunicorn when nginx was stopped and viceversa</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:21:23.268844</ts>
+    <user>Blossom</user>
+    <text>I'll do everything again from scratch and see if I manage to work around it now with gunicorn and nginx</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:26:18.301718</ts>
+    <user>Beula</user>
+    <text>Sounds like you're competing for ports and running into collisions. Nginx should handle 443 and 80, and forward to the "upstream" port (if using gunicorn) used by gunicorn (the `-b` flag can set this)</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:27:23.308714</ts>
+    <user>Beula</user>
+    <text>With Django it's also pretty much required to use nginx (or another webserver) to serve the static files (created via `./manage.py collectstatic`)</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:31:28.336652</ts>
+    <user>Blossom</user>
+    <text>yeah I thought as much, so I began from scratch and was able to put my app up using `gunicorn --workers 3 --bind 0.0.0.0:8000 shinra.wsgi`</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:32:09.341443</ts>
+    <user>Blossom</user>
+    <text>now, having that, do you have any resource I could use (that could work with either 1.10 or 1.11 and python 3) for setting that up with nginx?</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:46:41.439287</ts>
+    <user>Blossom</user>
+    <text>ah.. here is where I got stuck</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:46:42.439413</ts>
+    <user>Blossom</user>
+    <text>&lt;https://pastebin.com/r8MrQAPi&gt;</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T00:46:52.440501</ts>
+    <user>Blossom</user>
+    <text>Thats my bash script, I never got it to work haha</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T01:12:42.620460</ts>
+    <user>Blossom</user>
+    <text>Does anyone know how make gunicorn use the python from my virtual environment? for example: `/home/ubuntu/venvs/shinra/bin/gunicorn -c /home/ubuntu/venvs/shinra/bin/python /home/ubuntu/shinra/scripts/gunicorn_config.py shinra.wsgi`</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T01:13:55.628069</ts>
+    <user>Blossom</user>
+    <text>running `/home/ubuntu/venvs/shinra/bin/gunicorn -c /home/ubuntu/shinra/scripts/gunicorn_config.py shinra.wsgi` only works inside my virtual env and not with supervisor</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T01:24:12.697071</ts>
+    <user>Blossom</user>
+    <text>never mind, I got it to work now, my directories were all wrong</text>
+  </message>
+  <message conversation_id="39">
+    <ts>2017-06-21T07:23:40.291050</ts>
+    <user>Cristine</user>
+    <text>If this data is going to be used in a form that you post the json some where look at might help &lt;https://github.com/kushalpandya/JSONify&gt;</text>
+  </message>
+  <message conversation_id="40">
+    <ts>2017-06-21T07:23:42.291368</ts>
+    <user>Clarence</user>
+    <text>Hello, are there open source APIs to access street traffic feed live?</text>
+  </message>
+  <message conversation_id="40">
+    <ts>2017-06-21T07:25:50.320087</ts>
+    <user>Vada</user>
+    <text>&lt;@Clarence&gt; it's more likely that individual cities and towns will be responsible for publishing feeds if they want to</text>
+  </message>
+  <message conversation_id="40">
+    <ts>2017-06-21T07:25:53.320532</ts>
+    <user>Vada</user>
+    <text>so no global one</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T07:54:16.690963</ts>
+    <user>Holli</user>
+    <text>Hi guys, im developing an app in React. It has some content that i need to send to a database, not sure how to get it to communicate. I'm using React, Axios, Django. Any examples or things i need to be looking at?</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T07:58:08.744474</ts>
+    <user>Meg</user>
+    <text>I'd suggest `django-rest-framework` for django. Will make the API construction easier</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T07:58:47.753372</ts>
+    <user>Holli</user>
+    <text>&lt;@Meg&gt; so using a simple ajax request using axios or jquery i can post my contents over this API to the database?</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T07:58:50.754053</ts>
+    <user>Meg</user>
+    <text>and if you're not doing so, use `create-react-app` to get a good project boilerplate with a very high quality webpack configuration</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T07:59:26.762347</ts>
+    <user>Meg</user>
+    <text>so, what happens is when you wire up `axios` in your react app, it creates a request to the server via GET, PUT, POST, etc</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T07:59:59.769616</ts>
+    <user>Meg</user>
+    <text>and while you can think of this as similar to jquery's `$.ajax()` method, its a little different</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:00:03.771170</ts>
+    <user>Holli</user>
+    <text>ok</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:00:11.774002</ts>
+    <user>Meg</user>
+    <text>have you done anything like this before?</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:00:19.775990</ts>
+    <user>Holli</user>
+    <text>no thats why im kind of confused</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:00:27.778405</ts>
+    <user>Holli</user>
+    <text>ive been able to feed data into my react components</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:00:38.781111</ts>
+    <user>Holli</user>
+    <text>but now posting to the django setup</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:00:45.783011</ts>
+    <user>Holli</user>
+    <text>its not so clear in my mind</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:00:55.785658</ts>
+    <user>Holli</user>
+    <text>im going through the DRF tutorial</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:01:17.791153</ts>
+    <user>Holli</user>
+    <text>dos my axios post request need to point to a view URL that takes in a post, grabs what i send and stores?</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:01:22.792508</ts>
+    <user>Meg</user>
+    <text>correct</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:01:50.799079</ts>
+    <user>Meg</user>
+    <text>and if you're using DRF, the URL is mapped to at least an `APIView` implementation</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:02:34.810096</ts>
+    <user>Meg</user>
+    <text>which contains a `get(self, request, ...)` or `post(self, request, ...)` implementation</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:02:41.811917</ts>
+    <user>Holli</user>
+    <text>ok</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:03:03.817560</ts>
+    <user>Holli</user>
+    <text>so all that classic jazz if request.GET</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:03:05.818010</ts>
+    <user>Holli</user>
+    <text>etc.</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:03:16.820788</ts>
+    <user>Meg</user>
+    <text>out the window</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:03:38.826127</ts>
+    <user>Holli</user>
+    <text>Could you point me to any documentation, guides, tuts that i could look up? i fail to communicate what i am searching on google</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:03:45.827706</ts>
+    <user>Holli</user>
+    <text>brings up different stuff</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:04:15.834801</ts>
+    <user>Holli</user>
+    <text>a simplified example is what i need from somewhere to just establish an easy proof of work</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:04:28.838122</ts>
+    <user>Meg</user>
+    <text>server side or client side?</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:04:39.840860</ts>
+    <user>Meg</user>
+    <text>I mean, the DRF tutorial is pretty good</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:04:46.842496</ts>
+    <user>Holli</user>
+    <text>yeh perhaps client sided</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:04:54.844381</ts>
+    <user>Holli</user>
+    <text>sending the post request to the DRF API</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:04:58.845299</ts>
+    <user>Meg</user>
+    <text>ah ok</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:04:58.845399</ts>
+    <user>Holli</user>
+    <text>processing it</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:05:26.852264</ts>
+    <user>Meg</user>
+    <text>&lt;https://daveceddia.com/ajax-requests-in-react/&gt;</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:05:32.853778</ts>
+    <user>Meg</user>
+    <text>so that would help client side</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:05:42.855971</ts>
+    <user>Meg</user>
+    <text>server side, really depends on _what_ data you're sending</text>
+  </message>
+  <message conversation_id="42">
+    <ts>2017-06-21T08:05:49.857747</ts>
+    <user>Yessenia</user>
+    <text>&lt;@Mirna&gt; I am trying to get the value inside the li and strip out some text. I will test your code</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:05:51.858231</ts>
+    <user>Meg</user>
+    <text>and whether you need to seiralize it to a model instance</text>
+  </message>
+  <message conversation_id="42">
+    <ts>2017-06-21T08:05:58.859862</ts>
+    <user>Yessenia</user>
+    <text>&lt;@Mirna&gt; Thanks</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:06:05.861701</ts>
+    <user>Holli</user>
+    <text>yeh i would i'll be sending json to the database</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:06:17.864612</ts>
+    <user>Holli</user>
+    <text>thanks for the help though</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:06:25.866481</ts>
+    <user>Holli</user>
+    <text>it confirms im heading in the right direction with DRF</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:06:29.867311</ts>
+    <user>Meg</user>
+    <text>yeah</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:06:44.870996</ts>
+    <user>Meg</user>
+    <text>and what makes things easy is it can handle the serialization/deserialization for you</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:06:56.874251</ts>
+    <user>Meg</user>
+    <text>so you can send in a model representation via json from your client</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:07:17.879131</ts>
+    <user>Meg</user>
+    <text>and it will deserialize it to a model instance which you can do more stuff with</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:07:33.883134</ts>
+    <user>Meg</user>
+    <text>and then sending data back out to the client, it will serialize models to JSON</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:08:08.891465</ts>
+    <user>Holli</user>
+    <text>ok nice, and just ajax post to the url view which receives the data</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:08:22.894910</ts>
+    <user>Meg</user>
+    <text>correct</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:08:26.895940</ts>
+    <user>Meg</user>
+    <text>or get, put, etc</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:08:35.897910</ts>
+    <user>Holli</user>
+    <text>superb thanks man</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:08:40.899155</ts>
+    <user>Meg</user>
+    <text>:thumbsup:</text>
+  </message>
+  <message conversation_id="41">
+    <ts>2017-06-21T08:08:51.901851</ts>
+    <user>Holli</user>
+    <text>:100:</text>
+  </message>
+  <message conversation_id="43">
+    <ts>2017-06-21T08:42:32.433269</ts>
+    <user>Beula</user>
+    <text>The ansible I linked has a `role/nginx` that has the nginx setup steps :)</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:09:14.933506</ts>
+    <user>Rolland</user>
+    <text>I'm evaluating celery/redis alternatives for task queuing and scheduling. Someone mentioned redislite and apscheduler. Does apscheduler do task queuing or just scheduling? Also, any other alternatives?</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:09:21.936149</ts>
+    <user>Rolland</user>
+    <text>This is being used for a Django environment.</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:11:14.974243</ts>
+    <user>Collette</user>
+    <text>`concurrent.futures.ProcessPoolExecutor` is good at queuing when you don't need ETA scheduling</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:15:32.063476</ts>
+    <user>Rolland</user>
+    <text>So if I'm just firing off a task (not scheduling), that would be a good way to go?</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:15:38.065593</ts>
+    <user>Rolland</user>
+    <text>I like that.</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:18:33.126491</ts>
+    <user>Beula</user>
+    <text>Redis-lite would be if you kept celery to make it easier to distribute, otherwise APScheduler could call manage.py commands in your app and be deadsimple</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:19:58.157093</ts>
+    <user>Rolland</user>
+    <text>ah. gotcha.</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:21:10.182734</ts>
+    <user>Rolland</user>
+    <text>I was looking at if there was maybe en embedded task queue manager, but I'm not coming up with much. APScheduler looks to be a good route.</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:21:42.194462</ts>
+    <user>Rolland</user>
+    <text>Can you fire off tasks immediately without scheduling them using apscheduler?</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:25:15.271654</ts>
+    <user>Beula</user>
+    <text>Yeah I think the decorator returns the original function. So you could just call it directly iirc</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:26:10.291856</ts>
+    <user>Beula</user>
+    <text>Interesting thought, embedded task queue manager. I think in many cases someone would just use Cron or windows scheduler </text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:29:24.364350</ts>
+    <user>Rolland</user>
+    <text>True.</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:38:31.575313</ts>
+    <user>Vada</user>
+    <text>&lt;@Rolland&gt; we're also using huey</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:39:05.587549</ts>
+    <user>Rolland</user>
+    <text>I was actually just looking at that one. Can you start it right from django?</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:44:28.711939</ts>
+    <user>Suellen</user>
+    <text>&lt;@Vada&gt; from an author of Peewee?</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:45:53.745451</ts>
+    <user>Vada</user>
+    <text>&lt;https://github.com/coleifer/huey&gt;</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:46:02.749104</ts>
+    <user>Vada</user>
+    <text>not sure if they authored peewee but maybe</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:46:10.752285</ts>
+    <user>Vada</user>
+    <text>And what do you mean by start it from django?</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:46:46.766691</ts>
+    <user>Rolland</user>
+    <text>Well, I'd like to not have to run and manage extra processes.</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:47:37.786961</ts>
+    <user>Vada</user>
+    <text>it will use workers like celery</text>
+  </message>
+  <message conversation_id="44">
+    <ts>2017-06-21T09:48:11.799955</ts>
+    <user>Rolland</user>
+    <text>ah. ok.</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:47:35.337872</ts>
+    <user>Romona</user>
+    <text>hello everyone, I've requirement where dataset is large like 10 millions records, i want to use django rest framework in order to provide that data.
+
+Question : which one is the best ORM which is efficient for large datasets?
+
+1. Django ORM
+2. SQL alchemy
+
+</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:48:45.369425</ts>
+    <user>Dave</user>
+    <text>SQLalchemy is more performant especially if you're using Core.</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:49:54.400579</ts>
+    <user>Romona</user>
+    <text>&lt;@Dave&gt; thanks for the suggestion. I've those data on microsoft SQL server.</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:50:40.421233</ts>
+    <user>Romona</user>
+    <text>would like to move to postgresql.</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:51:13.435676</ts>
+    <user>Meg</user>
+    <text>yeah, will be cheaper in the long run</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:51:19.438332</ts>
+    <user>Meg</user>
+    <text>no sql server license :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:51:23.440036</ts>
+    <user>Dave</user>
+    <text>&lt;@Romona&gt; &lt;http://docs.sqlalchemy.org/en/latest/faq/performance.html&gt;</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:52:56.482672</ts>
+    <user>Romona</user>
+    <text>how about django ORM? Not good from performance point of view?</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:53:00.484897</ts>
+    <user>Johana</user>
+    <text>if you use sqlalchemy you can reflect your mssql database and then create its exact schema in postgres.</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:53:48.506810</ts>
+    <user>Johana</user>
+    <text>and you could use sqlacodegen to create the models.</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:54:18.520726</ts>
+    <user>Johana</user>
+    <text>i've done this very thing to move a .net application to python.</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:54:22.522493</ts>
+    <user>Gabriele</user>
+    <text>I think "performance on large data sets" and "ORM" are mutually exclusive. ORMs exist for development convenience, not high performance.</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:54:29.525442</ts>
+    <user>Meg</user>
+    <text>^</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:54:42.531611</ts>
+    <user>Meg</user>
+    <text>and furthermore, you should use pagination and such to actually retrieve the data</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:54:45.532959</ts>
+    <user>Gabriele</user>
+    <text>That's not to say you _can't_ get good performance - you can, if you know the ORM well and/or you have access to low level commands like SQLAlchemy Core</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:54:53.536688</ts>
+    <user>Romona</user>
+    <text>Ultimate plan is this only. Move web API .Net to django API.</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:55:03.541345</ts>
+    <user>Gabriele</user>
+    <text>But they're not designed for that purpose, and will probably impede you somewhat</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:55:21.549778</ts>
+    <user>Meg</user>
+    <text>and there are times you will have to write and execute raw sql</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:55:23.550854</ts>
+    <user>Johana</user>
+    <text>sqlalchemy's orm does a pretty good job in general.</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:56:47.589390</ts>
+    <user>Gabriele</user>
+    <text>It depends a lot on the nature of the querying. If you have good indexing set up and you're only working with a few records at a time, the ORM usually doesn't care if there are 10, 10000, or 1000000 rows in a DB</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:57:07.598358</ts>
+    <user>Gabriele</user>
+    <text>But if you're doing "big data" stuff where you routinely hit large amounts of the table... that's a different matter</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:57:17.602975</ts>
+    <user>Winnifred</user>
+    <text>reducing joins helps a lot too</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:57:41.613681</ts>
+    <user>Gabriele</user>
+    <text>yup, ORM joins are often nowhere near as efficient as raw SQL joins</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:58:33.637625</ts>
+    <user>Meg</user>
+    <text>one thing I like about django is you can print out the sql query for a given db access</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:58:43.641838</ts>
+    <user>Meg</user>
+    <text>and then look at it to see if you can improve it</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:58:46.643400</ts>
+    <user>Suellen</user>
+    <text>SQLAlchemy can do this too!</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:59:09.653900</ts>
+    <user>Meg</user>
+    <text>by django, I mean the django framework, not the ORM</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T10:59:39.668295</ts>
+    <user>Meg</user>
+    <text>since it is possible to replace the default ORM with sqlalchemy (though I've never done this), but the API is largely the same</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T11:03:16.774301</ts>
+    <user>Johana</user>
+    <text>yea, you can mix sqlalchemy and django orm. it's all just python at the end of the day. however, if you swap out one for the other you lose all the benefits of the django orm and how it integrates with the framework.</text>
+  </message>
+  <message conversation_id="45">
+    <ts>2017-06-21T11:08:04.904795</ts>
+    <user>Dave</user>
+    <text>If performance is a factor than use SQLAlchemy core to work on this large data set. If deadlines are more of a factor that use Django ORM since you're already use DRF. Just make sure to use eager loading on relationships where you can to optimize queries.
+
+&lt;http://ses4j.github.io/2015/11/23/optimizing-slow-django-rest-framework-performance/&gt;</text>
+  </message>
+  <message conversation_id="46">
+    <ts>2017-06-21T11:25:24.365386</ts>
+    <user>Willena</user>
+    <text>any good tutorials you all would recommend on packaging for somebody who's never done it?</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T12:43:10.322890</ts>
+    <user>Norris</user>
+    <text>how can i do this in python</text>
+  </message>
+  <message conversation_id="46">
+    <ts>2017-06-21T12:44:15.347345</ts>
+    <user>Romona</user>
+    <text>why don't you create store proc?</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T12:45:16.370807</ts>
+    <user>Norris</user>
+    <text>how can i do that</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T12:45:18.371649</ts>
+    <user>Norris</user>
+    <text>?</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T12:48:46.450595</ts>
+    <user>Winnifred</user>
+    <text>&lt;@Norris&gt;, can you give more context around the error? Things like an overview of what you're trying to do, your input, the expected output and the current error you're receiving.</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T12:49:24.464172</ts>
+    <user>Norris</user>
+    <text>in the comand like i get this error</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T12:49:25.464860</ts>
+    <user>Norris</user>
+    <text>File "dev.py", line 18
+SyntaxError: Non-ASCII character '\xc3' in file dev.py on line 19, but no encoding declared; see &lt;http://python.org/dev/peps/pep-0263/&gt; for details</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T12:49:40.470281</ts>
+    <user>Norris</user>
+    <text>its a valid sql code</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T12:50:02.478682</ts>
+    <user>Norris</user>
+    <text>and also valid python code</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T12:53:21.553257</ts>
+    <user>Winnifred</user>
+    <text>what version of python are you using?</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T12:59:43.703058</ts>
+    <user>Norris</user>
+    <text>&lt;@Winnifred&gt; its 2.7.12</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T13:00:47.731282</ts>
+    <user>Winnifred</user>
+    <text>Okay, try declaring your source encoding by adding this to the top of your file:</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T13:02:32.773759</ts>
+    <user>Norris</user>
+    <text>thanks</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T13:02:36.775126</ts>
+    <user>Norris</user>
+    <text>worked</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T13:02:42.777418</ts>
+    <user>Norris</user>
+    <text>but i dont get any data</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T13:03:37.799344</ts>
+    <user>Winnifred</user>
+    <text>`cur.execute(query)` only executes your query. You will need to fetch the results.</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T13:04:59.831091</ts>
+    <user>Winnifred</user>
+    <text>good stackoverflow reference to your encoding issue above:</text>
+  </message>
+  <message conversation_id="47">
+    <ts>2017-06-21T13:05:33.844532</ts>
+    <user>Winnifred</user>
+    <text>&lt;https://stackoverflow.com/questions/10589620/syntaxerror-non-ascii-character-xa3-in-file-when-function-returns-%C2%A3&gt;</text>
+  </message>
+  <message conversation_id="48">
+    <ts>2017-06-21T14:02:36.171281</ts>
+    <user>Ciera</user>
+    <text>&lt;@Yessenia&gt; look at the `json` module</text>
+  </message>
+  <message conversation_id="48">
+    <ts>2017-06-21T14:04:12.210473</ts>
+    <user>Beula</user>
+    <text>That's invalid JSON - do you get that in an array instead?</text>
+  </message>
+  <message conversation_id="48">
+    <ts>2017-06-21T14:24:18.677429</ts>
+    <user>Yessenia</user>
+    <text>&lt;@Beula&gt; I get it while parsing a website, it's inside a html-table.</text>
+  </message>
+  <message conversation_id="48">
+    <ts>2017-06-21T14:34:29.923505</ts>
+    <user>Patty</user>
+    <text>&lt;@Yessenia&gt; what he’s saying is that format, when when parsed with the `json` module, will fail as its not valid JSON. you can check if it’s valid here: &lt;http://www.jsoneditoronline.org/&gt;</text>
+  </message>
+  <message conversation_id="48">
+    <ts>2017-06-21T14:37:32.995226</ts>
+    <user>Yessenia</user>
+    <text>&lt;@Patty&gt; Thanks</text>
+  </message>
+  <message conversation_id="48">
+    <ts>2017-06-21T14:40:40.067556</ts>
+    <user>Yessenia</user>
+    <text>Quite simple to fix, .split(',') then I have a list and something to work with :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="48">
+    <ts>2017-06-21T14:47:38.228517</ts>
+    <user>Beula</user>
+    <text>Not that simple, because `,` can be within a json block</text>
+  </message>
+  <message conversation_id="48">
+    <ts>2017-06-21T14:48:20.244630</ts>
+    <user>Beula</user>
+    <text>If you can garantee that format - it could be that simple and skip odd `,`'s, otherwise parsing matching brackets is a simple stack issue</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:21:10.986024</ts>
+    <user>Norris</user>
+    <text>greatings</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:21:30.992866</ts>
+    <user>Norris</user>
+    <text>how can i put this type of date format in a mysql query?</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:21:31.993409</ts>
+    <user>Norris</user>
+    <text>2017-06-14 00:00:00</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:21:40.996088</ts>
+    <user>Norris</user>
+    <text>date and time</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:24:45.062062</ts>
+    <user>Beula</user>
+    <text>What have you tried?</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:26:54.108736</ts>
+    <user>Norris</user>
+    <text>datetime.date(2017-06-14 00:00:00)</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:27:02.111413</ts>
+    <user>Norris</user>
+    <text>import datetime</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:27:45.127116</ts>
+    <user>Beula</user>
+    <text>Please format code with backticks around it</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:28:11.136246</ts>
+    <user>Norris</user>
+    <text>what do you mean</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:28:46.149322</ts>
+    <user>Meg</user>
+    <text>&lt;https://get.slack.help/hc/en-us/articles/202288908-Format-your-messages#code-blocks&gt;</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:28:47.149501</ts>
+    <user>Beula</user>
+    <text>```
+`code`
+```</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:29:01.154558</ts>
+    <user>Rolland</user>
+    <text>That was unnecessarily hard :stuck_out_tongue:</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:29:16.160053</ts>
+    <user>Beula</user>
+    <text>That's also invalid python you posted - so already it suggests that you aren't really showing what you have tried :confused:</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:29:16.160152</ts>
+    <user>Meg</user>
+    <text>makes it easier to format code for readability compared to regular text</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:30:10.179938</ts>
+    <user>Meg</user>
+    <text>so, `datetime.date` requires three inputs</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:30:18.182906</ts>
+    <user>Meg</user>
+    <text>`year`, `month`, `day`</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:30:23.185037</ts>
+    <user>Meg</user>
+    <text>all have to be integers</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:30:37.190304</ts>
+    <user>Meg</user>
+    <text>eg, `datetime.date(2017, 05, 17)`</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:30:45.192869</ts>
+    <user>Norris</user>
+    <text>the thing is that i get this format from jquery date time picker</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:31:57.218384</ts>
+    <user>Beula</user>
+    <text>&lt;@Norris&gt; &lt;https://docs.python.org/3/library/datetime.html#datetime.datetime.strptime&gt;</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:32:48.236670</ts>
+    <user>Norris</user>
+    <text>is there any way i can manage the format i posted because all my data is saved like that and  i have to do the queries in that format to get the correct detail</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:32:56.239287</ts>
+    <user>Norris</user>
+    <text>from the database</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:33:56.260948</ts>
+    <user>Norris</user>
+    <text>my queries have to with date and time values because in the database are saved in this format</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:34:10.265766</ts>
+    <user>Beula</user>
+    <text>You mean they are not saved as datetimes?</text>
+  </message>
+  <message conversation_id="50">
+    <ts>2017-06-21T15:34:21.269969</ts>
+    <user>Meghan</user>
+    <text>Anyone here used dreamfactory? Trying to insert a list of rows using a stored procedure. Hoping not to have to do thousands of calls to the sp.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:34:31.273566</ts>
+    <user>Norris</user>
+    <text>date and time</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:34:32.273848</ts>
+    <user>Norris</user>
+    <text>2017-06-14 00:00:00</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:34:46.279171</ts>
+    <user>Norris</user>
+    <text>2017-06-14 23:59:59</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:34:58.282849</ts>
+    <user>Beula</user>
+    <text>As what column type?</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:35:05.285524</ts>
+    <user>Beula</user>
+    <text>How are you querying?</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:35:24.292261</ts>
+    <user>Beula</user>
+    <text>Please give more relevant info, you can see &lt;https://stackoverflow.com/help/how-to-ask&gt; for tips on how to ask good questions</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:36:46.320926</ts>
+    <user>Norris</user>
+    <text>i think you are been an ass</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:36:52.323120</ts>
+    <user>Norris</user>
+    <text>if you dont know</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:36:58.324978</ts>
+    <user>Norris</user>
+    <text>dont say anything</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:37:28.335497</ts>
+    <user>Norris</user>
+    <text>&lt;@Beula&gt;</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:37:47.342059</ts>
+    <user>Beula</user>
+    <text>You realize I am asking more questions to better understand your question to actually solve it right?</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:38:01.346948</ts>
+    <user>Beula</user>
+    <text>Calling people names is not something we tolerate here.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:40:35.401052</ts>
+    <user>Suellen</user>
+    <text>:smile:</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:43:22.458920</ts>
+    <user>Johana</user>
+    <text>yea, stop being a poo poo head.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:43:36.463860</ts>
+    <user>Beula</user>
+    <text>#Banned</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:44:46.488372</ts>
+    <user>Deedee</user>
+    <text>Was about to drop some spanglish to let her know what was up... but yeah, account deactivated</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:44:53.490869</ts>
+    <user>Bruno</user>
+    <text>&lt;@Johana&gt; poo poo head... them's is fightin' words ...</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:45:00.493168</ts>
+    <user>Johana</user>
+    <text>&lt;@Norris&gt; there are ways to format datetimes. depending on what you are using to query the database some of this can be done for you. we don't really know if questions aren't posted with example code that replicates what you are trying to do or code that shows what you have tried.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:45:11.497253</ts>
+    <user>Johana</user>
+    <text>hence, the reason you are being directed to a SO guide.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:45:17.499324</ts>
+    <user>Meghan</user>
+    <text>I think that person is go bye bye.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:45:18.499760</ts>
+    <user>Patty</user>
+    <text>why isn’t “poo poo head” in the list of profanity for &lt;@Hung&gt; ?</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:45:54.512460</ts>
+    <user>Cleo</user>
+    <text>Do you find the language to be obscene?</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:45:58.514157</ts>
+    <user>Cleo</user>
+    <text>Or silly?</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:46:01.515149</ts>
+    <user>Meghan</user>
+    <text>Hate to repeat myself, but I think it may have been missed in that fun.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:46:12.518838</ts>
+    <user>Meghan</user>
+    <text>Anyone here used dreamfactory? Trying to insert a list of rows using a stored procedure. Hoping not to have to do thousands of calls to the sp.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:46:33.526636</ts>
+    <user>Johana</user>
+    <text>no, never heard of dreamfactory.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:46:37.528008</ts>
+    <user>Deedee</user>
+    <text>lol &lt;@Meghan&gt;</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:46:42.529906</ts>
+    <user>Johana</user>
+    <text>sounds pleasant.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:47:02.536844</ts>
+    <user>Johana</user>
+    <text>you can fire off stored procedures with sqlalchemy.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:47:07.538630</ts>
+    <user>Patty</user>
+    <text>sounds like a dream ~</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:47:08.539087</ts>
+    <user>Johana</user>
+    <text>that's about all i know.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:47:33.548144</ts>
+    <user>Deedee</user>
+    <text>I  thought about it &lt;@Patty&gt;, but didn't want to go there.... lol</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:48:06.559845</ts>
+    <user>Meghan</user>
+    <text>dreamfactory is a php application that provides a rest api for many databases. It's really nice in ways, can be frustrating.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:48:33.569728</ts>
+    <user>Johana</user>
+    <text>sounds like the opposite of a dream.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:48:35.570551</ts>
+    <user>Johana</user>
+    <text>php</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:48:49.575497</ts>
+    <user>Johana</user>
+    <text>comatose</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:48:54.576942</ts>
+    <user>Meghan</user>
+    <text>Well, learning how to do deal with it is fun, and the documentation is lacking and somewhat outdated.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:49:06.581992</ts>
+    <user>Johana</user>
+    <text>mummification</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:49:14.585852</ts>
+    <user>Beula</user>
+    <text>That's a dangerous proposition. I don't care about the language, the issue is leaking a database and relations to an API. It's good to try to have some separation of the view layer and the persistence layer</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:49:18.587327</ts>
+    <user>Meghan</user>
+    <text>It is nice not having to deal with mysql library deficiencies and install issues. Also makes it easier to protect a database.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:50:00.602382</ts>
+    <user>Meghan</user>
+    <text>We're using stored procedure calls through the rest api, so very little is exposed to the user, and it's per key for access.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:50:14.607850</ts>
+    <user>Johana</user>
+    <text>i'm mostly just joking around. sorry i can't be more help.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:50:53.622093</ts>
+    <user>Meghan</user>
+    <text>Just hoping I don't have to call my stored procedure once per row to insert... it's going to be hundreds of thousands of rows.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:51:56.644774</ts>
+    <user>Deedee</user>
+    <text>Are you locked into DreamFactory?</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:52:48.663167</ts>
+    <user>Beula</user>
+    <text>That is good to hear, though sprocs scare me for other reasons :joy: . Bad flashbacks</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:53:10.670775</ts>
+    <user>Meghan</user>
+    <text>No. We've been using it for a few months though.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:55:15.716229</ts>
+    <user>Deedee</user>
+    <text>Had never heard of it before, looking through their site, looks solid. Last couple of API's I did were w/ Slim (PHP framework). Sorry, can't help.</text>
+  </message>
+  <message conversation_id="49">
+    <ts>2017-06-21T15:59:55.821476</ts>
+    <user>Meghan</user>
+    <text>If we keep breaking the mysql cluster maybe we'll switch to postgres and something else. :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="51">
+    <ts>2017-06-21T16:00:11.828479</ts>
+    <user>Meg</user>
+    <text>crunchy mysql</text>
+  </message>
+  <message conversation_id="52">
+    <ts>2017-06-21T16:00:21.832368</ts>
+    <user>Winnifred</user>
+    <text>Does anyone have experience making large requests to facebook endpoints?</text>
+  </message>
+  <message conversation_id="51">
+    <ts>2017-06-21T16:00:23.833097</ts>
+    <user>Meghan</user>
+    <text>What's that?</text>
+  </message>
+  <message conversation_id="51">
+    <ts>2017-06-21T16:01:01.848008</ts>
+    <user>Meg</user>
+    <text>&lt;@Meghan&gt; just me being facetious</text>
+  </message>
+  <message conversation_id="51">
+    <ts>2017-06-21T16:01:09.851061</ts>
+    <user>Meghan</user>
+    <text>oh, okay.</text>
+  </message>
+  <message conversation_id="52">
+    <ts>2017-06-21T16:01:26.857681</ts>
+    <user>Meg</user>
+    <text>&lt;@Winnifred&gt; not here, sorry</text>
+  </message>
+  <message conversation_id="52">
+    <ts>2017-06-21T16:59:04.104289</ts>
+    <user>Martha</user>
+    <text>&lt;@Winnifred&gt; yes - what kinds of requests</text>
+  </message>
+  <message conversation_id="52">
+    <ts>2017-06-21T17:00:00.123984</ts>
+    <user>Winnifred</user>
+    <text>endpoints related to advertising campaigns! /campaigns, /adsets, /ads</text>
+  </message>
+  <message conversation_id="52">
+    <ts>2017-06-21T17:00:48.142825</ts>
+    <user>Martha</user>
+    <text>Ah I dealt more so with querying and pulling info on pages</text>
+  </message>
+  <message conversation_id="52">
+    <ts>2017-06-21T17:00:56.145543</ts>
+    <user>Martha</user>
+    <text>but what kind of stuff are you wondering about?</text>
+  </message>
+  <message conversation_id="52">
+    <ts>2017-06-21T17:03:01.189477</ts>
+    <user>Winnifred</user>
+    <text>efficient ways to grab several thousand records/json arrays</text>
+  </message>
+  <message conversation_id="52">
+    <ts>2017-06-21T17:05:43.244936</ts>
+    <user>Martha</user>
+    <text>u can use python with just requests and json thats what I always use</text>
+  </message>
+  <message conversation_id="52">
+    <ts>2017-06-21T17:05:53.247870</ts>
+    <user>Martha</user>
+    <text>actually just with requests even</text>
+  </message>
+  <message conversation_id="52">
+    <ts>2017-06-21T17:06:35.261620</ts>
+    <user>Martha</user>
+    <text>`requests.get('url').json()`  you just want to look at their documentation and dig a little to find out how you can make the most requests possible - because some of their apis do allow batching, or multiple queries at one time</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:20:29.524814</ts>
+    <user>Thelma</user>
+    <text>hey what is the best way to write a list of json objects to a file</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:21:42.547010</ts>
+    <user>Thelma</user>
+    <text>I was thinking of writing it into a csv</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:23:33.580689</ts>
+    <user>Thelma</user>
+    <text>where each row is a basically a json object or should I save it as a json file?</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:24:10.591940</ts>
+    <user>Beula</user>
+    <text>&lt;@Thelma&gt; You should probably either do a CSV, which would mean breaking the JSON into columns in your CSV or just a file where each line is a new JSON object</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:24:25.596665</ts>
+    <user>Beula</user>
+    <text>You could make the JSON a column of the CSV, technically, but that would be kind of awkward to use again</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:24:46.602830</ts>
+    <user>Thelma</user>
+    <text>yeah that is very awkward and hard to use I am thinking of latter</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:26:36.636405</ts>
+    <user>Beula</user>
+    <text>Are you going to want to search them for anything? If so - you may be best served to dump the contents into a database so you can query and such</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:27:04.645070</ts>
+    <user>Thelma</user>
+    <text>yeah right now I just want to work with files and if needed we can move to db</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:27:29.652637</ts>
+    <user>Martha</user>
+    <text>how big is the file</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:28:31.670855</ts>
+    <user>Thelma</user>
+    <text>its quite small 1200x250x4 float array is basically what it is</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:28:34.671682</ts>
+    <user>Martha</user>
+    <text>dump it as json then either transfor in refine in a matter of seconds or drop it on here if its small enough: &lt;https://konklone.io/json/&gt;</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:30:02.698747</ts>
+    <user>Thelma</user>
+    <text>oh it is better if I automate it I just dumped as a json object</text>
+  </message>
+  <message conversation_id="53">
+    <ts>2017-06-21T17:30:12.702097</ts>
+    <user>Thelma</user>
+    <text>thanks  guys!</text>
+  </message>
+  <message conversation_id="54">
+    <ts>2017-06-21T18:39:57.755010</ts>
+    <user>Thelma</user>
+    <text>hey guys I have a quick question 
+```
+dict = {....}
+keys = dict.keys()
+values = dict.values()
+dict2 = dict(zip(keys,values)
+```
+will dict and dict2 be the same always?</text>
+  </message>
+  <message conversation_id="54">
+    <ts>2017-06-21T19:00:04.993729</ts>
+    <user>Dorothy</user>
+    <text>since dictionaries are unordered, I would suspect the output of zip to produce the same results as the original dict, barring mutation of keys or values</text>
+  </message>
+  <message conversation_id="54">
+    <ts>2017-06-21T19:00:26.999098</ts>
+    <user>Dorothy</user>
+    <text>this is my best guess</text>
+  </message>
+  <message conversation_id="54">
+    <ts>2017-06-21T19:00:57.005877</ts>
+    <user>Dorothy</user>
+    <text>contents and keys i'm confident in</text>
+  </message>
+  <message conversation_id="54">
+    <ts>2017-06-21T19:01:12.008878</ts>
+    <user>Dorothy</user>
+    <text>ordering, not sure but think they probably will be the same</text>
+  </message>
+  <message conversation_id="54">
+    <ts>2017-06-21T19:03:59.042046</ts>
+    <user>Dorothy</user>
+    <text>I assume that shallow copy or deep copy is not related to your problem</text>
+  </message>
+  <message conversation_id="54">
+    <ts>2017-06-21T19:10:20.114872</ts>
+    <user>Dorothy</user>
+    <text>if uncertain, instead of `dict == dict2` you could ask `all(dict.keys() in dict2)`</text>
+  </message>
+  <message conversation_id="54">
+    <ts>2017-06-21T19:57:13.589685</ts>
+    <user>Patty</user>
+    <text>Since dictionaries don't keep order like &lt;@Dorothy&gt; said, the calls to `keys` and `values` are not guaranteed to be in the same order (though the resulting lists _do_ maintain their order but are not created in order). Because of that, zipping them back together will not be equal (because keys may have new values and order may not be the same). However if you used an `OrderedDict` then keys and values lists will maintain order, so calling `zip` in that instance would result in the same results </text>
+  </message>
+  <message conversation_id="55">
+    <ts>2017-06-21T22:29:47.835320</ts>
+    <user>Vanetta</user>
+    <text>hi, i'm getting TypeError: 'dict' object is not callable when using data = request.json(). any ideas why? thanks in advance!</text>
+  </message>
+  <message conversation_id="55">
+    <ts>2017-06-21T22:35:55.882916</ts>
+    <user>Winnifred</user>
+    <text>hi &lt;@Vanetta&gt;, what is `request`?</text>
+  </message>
+  <message conversation_id="55">
+    <ts>2017-06-21T22:41:59.927540</ts>
+    <user>Winnifred</user>
+    <text>hrm, I've never used bottle but it looks like `request` is implicit.  Is it safe for me to assume you want to convert the request to json?</text>
+  </message>
+  <message conversation_id="55">
+    <ts>2017-06-21T22:44:23.945159</ts>
+    <user>Vanetta</user>
+    <text>&lt;@Winnifred&gt; yeah</text>
+  </message>
+  <message conversation_id="55">
+    <ts>2017-06-21T22:52:47.005749</ts>
+    <user>Beula</user>
+    <text>&lt;@Winnifred&gt; :taco: </text>
+  </message>
+  <message conversation_id="55">
+    <ts>2017-06-21T22:54:23.017420</ts>
+    <user>Winnifred</user>
+    <text>Okay, per &lt;https://bottlepy.org/docs/dev/api.html#bottle.BaseRequest.json&gt;, it looks like you can only use that method if the content type header is application/json or application/json-rpc. I'm guessing it's not. You can probably see this if you directly print the `request` object. If you still want to force this to json, you can `import json` then use `json.dumps(request)`.</text>
+  </message>
+  <message conversation_id="55">
+    <ts>2017-06-21T22:55:48.027023</ts>
+    <user>Winnifred</user>
+    <text>thanks, &lt;@Beula&gt; :smile:</text>
+  </message>
+  <message conversation_id="55">
+    <ts>2017-06-21T22:56:21.030979</ts>
+    <user>Beula</user>
+    <text>Thank you for taking time to understand the problem, ask clarifying questions and answer!</text>
+  </message>
+  <message conversation_id="55">
+    <ts>2017-06-21T23:28:37.248625</ts>
+    <user>Vanetta</user>
+    <text>thanks!!</text>
+  </message>
+  <message conversation_id="56">
+    <ts>2017-06-22T00:35:40.698629</ts>
+    <user>Beula</user>
+    <text>Any tips on forming an LLC would be welcomed. I'm based in the USA (Colorado, specifically)</text>
+  </message>
+  <message conversation_id="56">
+    <ts>2017-06-22T00:36:57.707255</ts>
+    <user>Beula</user>
+    <text>I'm looking to funnel contract work through the LLC and a few other ventures. </text>
+  </message>
+  <message conversation_id="57">
+    <ts>2017-06-22T04:34:09.084255</ts>
+    <user>Ciera</user>
+    <text>```
+for v in o:
+    print(v['label'])
+```</text>
+  </message>
+  <message conversation_id="57">
+    <ts>2017-06-22T04:34:14.085316</ts>
+    <user>Ciera</user>
+    <text>o is a list</text>
+  </message>
+  <message conversation_id="57">
+    <ts>2017-06-22T04:35:06.099307</ts>
+    <user>Yessenia</user>
+    <text>&lt;@Ciera&gt; Then I get : TypeError: list indices must be integers or slices, not str</text>
+  </message>
+  <message conversation_id="57">
+    <ts>2017-06-22T04:35:24.103714</ts>
+    <user>Yessenia</user>
+    <text>I really don't see what I am doing wrong</text>
+  </message>
+  <message conversation_id="57">
+    <ts>2017-06-22T04:36:34.121588</ts>
+    <user>Ciera</user>
+    <text>when you load your string as json in `o` it load a list. Because your json is a list</text>
+  </message>
+  <message conversation_id="57">
+    <ts>2017-06-22T04:36:58.127617</ts>
+    <user>Ciera</user>
+    <text>so you need to iterate over the list to get each label/value inside</text>
+  </message>
+  <message conversation_id="57">
+    <ts>2017-06-22T04:37:31.135876</ts>
+    <user>Yessenia</user>
+    <text>ajj</text>
+  </message>
+  <message conversation_id="57">
+    <ts>2017-06-22T04:37:34.136543</ts>
+    <user>Yessenia</user>
+    <text>[0]</text>
+  </message>
+  <message conversation_id="57">
+    <ts>2017-06-22T04:37:45.139250</ts>
+    <user>Ciera</user>
+    <text>```
+import json
+raw_string = '[{"label":"2012","value":2715016.0},{"label":"2013","value":2911467.0},{"label":"2014","value":3254471.0},{"label":"2015","value":3522816.0},{"label":"2016","value":3906514.0}]'
+
+o = json.loads(raw_string)
+for info in o:
+    print(info['label'])
+
+```</text>
+  </message>
+  <message conversation_id="57">
+    <ts>2017-06-22T04:41:26.195341</ts>
+    <user>Yessenia</user>
+    <text>Thank you</text>
+  </message>
+  <message conversation_id="58">
+    <ts>2017-06-22T05:56:57.398979</ts>
+    <user>Timothy</user>
+    <text>Maybe someone has an idea on a bit of a headscratcher I have.
+I have a project which essentially is a python app with currently npyscreen ui running on a raspberry pi. The idea is that a user can search for games using the app on the pi. Wonderful, works well. The issue is that I’m aiming it for RetroPie, where the majority of it’s users only have a controller connected, so no keyboard to enter details. How would I solve this? I was thinking of maybe creating an onscreen keyboard, or perhaps have up and down arrows to go down letters of the alphabet and left and right to move the cursor, but then how do you move to the next input box, or button? Anyone have any ideas?</text>
+  </message>
+  <message conversation_id="58">
+    <ts>2017-06-22T05:58:31.423899</ts>
+    <user>Ciera</user>
+    <text>how many button are there on a controller ?</text>
+  </message>
+  <message conversation_id="58">
+    <ts>2017-06-22T06:00:34.457854</ts>
+    <user>Timothy</user>
+    <text>Well say someone has the bare bones, a NES USB controller, you are looking at 4 buttons and D</text>
+  </message>
+  <message conversation_id="58">
+    <ts>2017-06-22T06:00:43.460257</ts>
+    <user>Suellen</user>
+    <text>This is the best I've seen. Navigating through almost 100 keys using left/right is a pain.</text>
+  </message>
+  <message conversation_id="58">
+    <ts>2017-06-22T06:03:01.495622</ts>
+    <user>Timothy</user>
+    <text>True, but the issue there is that it counts on analog. Many users will have USB retro pads like NES and SNES (myself included) which cannot easily move diagonal let alone hold it there. And the NES USB controller has a total of 4 buttons, with only 2 really free to play with, so that makes this perhaps too difficult</text>
+  </message>
+  <message conversation_id="58">
+    <ts>2017-06-22T06:06:30.547314</ts>
+    <user>Ciera</user>
+    <text>Can you do long press? </text>
+  </message>
+  <message conversation_id="58">
+    <ts>2017-06-22T06:09:08.585573</ts>
+    <user>Timothy</user>
+    <text>I should imagine so yes</text>
+  </message>
+  <message conversation_id="58">
+    <ts>2017-06-22T09:12:02.179068</ts>
+    <user>Patty</user>
+    <text>&lt;@Timothy&gt; you could offer two interfaces: one with the controller that is a bit slower for input (maybe also detect NES vs SNES for number of buttons to help us SNES controller users) and another that allows for just using a keyboard as well. i tend to keep a spare logitech wireless keyboard connected to my retropie</text>
+  </message>
+  <message conversation_id="58">
+    <ts>2017-06-22T09:12:19.184774</ts>
+    <user>Patty</user>
+    <text>also THANK YOU for adding something that is MUCH NEEDED in emulation station</text>
+  </message>
+  <message conversation_id="58">
+    <ts>2017-06-22T09:12:27.187394</ts>
+    <user>Patty</user>
+    <text>&lt;@Timothy&gt; :taco:</text>
+  </message>
+  <message conversation_id="59">
+    <ts>2017-06-22T09:48:25.974206</ts>
+    <user>Junita</user>
+    <text>&lt;@Beula&gt; do you think you need the limited liability aspect?  what kind of other ventures are you thinking?</text>
+  </message>
+  <message conversation_id="59">
+    <ts>2017-06-22T10:25:49.907906</ts>
+    <user>Beula</user>
+    <text>I'm also organizing a conference, so I think that is really where the LLC starts to make sense</text>
+  </message>
+  <message conversation_id="58">
+    <ts>2017-06-22T10:37:00.201185</ts>
+    <user>Timothy</user>
+    <text>&lt;@Patty&gt; you sound like you have the same setup as me, wireless logitech keyboard and snes usb controller. I think that’s probably the way I’m going to do it. Have it determine whether to use keyboard or on screen and then create an onscreen keyboard if it’s a controller.</text>
+  </message>
+  <message conversation_id="58">
+    <ts>2017-06-22T11:37:51.818831</ts>
+    <user>Meghan</user>
+    <text>I guess I'm late to the retropie discussion, but I would aim for as simple as possible. Assume the user an NES control and nothing more, and if possible avoid an onscreen keyboard, because those are always a pain.
+
+I have an HTPC with a logitech keyboard/touchpad that I use in addition to a XB One control, but I would guess this is the exception rather than the norm. And, it's not retropie, so I like being able to use a browser and other things.</text>
+  </message>
+  <message conversation_id="59">
+    <ts>2017-06-22T11:40:55.898537</ts>
+    <user>Junita</user>
+    <text>Ah, yeah, I could see that then.</text>
+  </message>
+  <message conversation_id="60">
+    <ts>2017-06-22T11:41:33.914812</ts>
+    <user>Roseann</user>
+    <text>Question: How do you create a view with python &amp;amp; django</text>
+  </message>
+  <message conversation_id="60">
+    <ts>2017-06-22T11:43:09.955372</ts>
+    <user>Dave</user>
+    <text>You have return as a parameter.</text>
+  </message>
+  <message conversation_id="60">
+    <ts>2017-06-22T11:43:58.976079</ts>
+    <user>Dave</user>
+    <text>&lt;https://docs.djangoproject.com/en/1.11/topics/http/views/&gt;</text>
+  </message>
+  <message conversation_id="60">
+    <ts>2017-06-22T11:44:00.977168</ts>
+    <user>Roseann</user>
+    <text>Should it now be a function</text>
+  </message>
+  <message conversation_id="60">
+    <ts>2017-06-22T11:45:08.006576</ts>
+    <user>Dave</user>
+    <text>Django has great documentation. The one I sent you is about creating views. Normally you have `request` as a parameter for a view function. This will contain information pertinent to that particular request.</text>
+  </message>
+  <message conversation_id="60">
+    <ts>2017-06-22T11:45:36.019175</ts>
+    <user>Dave</user>
+    <text>Returning an HttpResponse is correct though.</text>
+  </message>
+  <message conversation_id="60">
+    <ts>2017-06-22T11:49:49.129324</ts>
+    <user>Roseann</user>
+    <text>Requesting the view.py file. I remember now. Thanks Man</text>
+  </message>
+  <message conversation_id="61">
+    <ts>2017-06-22T14:18:48.640162</ts>
+    <user>Marcela</user>
+    <text>Hello guys</text>
+  </message>
+  <message conversation_id="61">
+    <ts>2017-06-22T14:18:50.640926</ts>
+    <user>Marcela</user>
+    <text>I might need some help</text>
+  </message>
+  <message conversation_id="61">
+    <ts>2017-06-22T14:19:14.649678</ts>
+    <user>Marcela</user>
+    <text>I am trying to use virtualenv to install requirements.txt which required a C++ Microsoft Visual Studio Build tools.</text>
+  </message>
+  <message conversation_id="61">
+    <ts>2017-06-22T14:19:28.655115</ts>
+    <user>Marcela</user>
+    <text>I've installed this and configured PATH, and now when when requirements.txt runs cl.exe it gets this error:</text>
+  </message>
+  <message conversation_id="61">
+    <ts>2017-06-22T14:19:35.657963</ts>
+    <user>Marcela</user>
+    <text>fatal error C1083: Cannot open include file: 'io.h': No such file or directory</text>
+  </message>
+  <message conversation_id="61">
+    <ts>2017-06-22T14:20:26.676377</ts>
+    <user>Marcela</user>
+    <text>If I run it using the VS Command Shell, then i get the same error but with a different file</text>
+  </message>
+  <message conversation_id="61">
+    <ts>2017-06-22T14:20:34.680235</ts>
+    <user>Marcela</user>
+    <text>unistd.h</text>
+  </message>
+  <message conversation_id="61">
+    <ts>2017-06-22T14:21:00.689844</ts>
+    <user>Marcela</user>
+    <text>I'm not sure what I should do to fix this, or if I can skip having these entirely? Some posts have implied that these files aren't even necessary</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T16:56:45.044589</ts>
+    <user>Beula</user>
+    <text>Why override the defaults?  You can run `PYTEST_DEBUG=1 python -m pytest` to see the debug</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T16:58:24.078320</ts>
+    <user>Noemi</user>
+    <text>What do you mean override the defaults?</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T16:59:06.092625</ts>
+    <user>Noemi</user>
+    <text>Running that command gave me a long ugly stack trace</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:03:32.184582</ts>
+    <user>Beula</user>
+    <text>The `pytest.ini` is just the defaults</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:03:38.186527</ts>
+    <user>Noemi</user>
+    <text>Yes</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:03:39.187065</ts>
+    <user>Noemi</user>
+    <text>Well</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:03:40.187290</ts>
+    <user>Beula</user>
+    <text>but just drop your test functions to be outside the class</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:03:49.190423</ts>
+    <user>Noemi</user>
+    <text>No dice</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:04:14.198423</ts>
+    <user>Beula</user>
+    <text>I reproduced it locally and it finds them fine.</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:04:24.201892</ts>
+    <user>Noemi</user>
+    <text>Collected 0 items</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:04:25.202009</ts>
+    <user>Beula</user>
+    <text>Your class doesn't match the `python_classes` config key</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:04:39.206654</ts>
+    <user>Noemi</user>
+    <text>That's what I was trying to override with the ini</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:05:06.215457</ts>
+    <user>Noemi</user>
+    <text>Ahhh</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:05:07.215689</ts>
+    <user>Noemi</user>
+    <text>I see</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:06:00.232332</ts>
+    <user>Beula</user>
+    <text>You also need `self` as an arg to class methods (which is how those will be treated)</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:06:58.250884</ts>
+    <user>Noemi</user>
+    <text>Ahh, adding self worked</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:07:20.258043</ts>
+    <user>Noemi</user>
+    <text>:taco: &lt;@Beula&gt;</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:07:24.259298</ts>
+    <user>Beula</user>
+    <text>:pacman:</text>
+  </message>
+  <message conversation_id="62">
+    <ts>2017-06-22T17:08:01.271366</ts>
+    <user>Noemi</user>
+    <text>Which of course is there in the actual test classes I've got written, forgot to include them in the sample</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:19:57.185676</ts>
+    <user>Marcela</user>
+    <text>Does anyone know the problem I'm dealing with?</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:20:03.186723</ts>
+    <user>Marcela</user>
+    <text>It's been keeping me from making progress</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:26:13.235246</ts>
+    <user>Beula</user>
+    <text>&lt;@Marcela&gt; we have a channel dedicated to windows (&lt;#C5XHHMXHB|os_windows&gt;). It's small, but growing. A large portion of the community isn't on windows (or those that are are a bit quieter) - so we are trying to gather that knowledge there.</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:27:02.241860</ts>
+    <user>Beula</user>
+    <text>Can you list the contents of the `requirements.txt`?</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:27:27.245258</ts>
+    <user>Marcela</user>
+    <text>Yes</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:27:51.248274</ts>
+    <user>Marcela</user>
+    <text>and i added that channel</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:28:17.251834</ts>
+    <user>Marcela</user>
+    <text>I was wondering if maybe I should just install a Ubuntu terminal and use that as my environment? I think I've seen someone do that before but I'm not sure. I would rather avoid that and get it working on my Windows though</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:35:06.306444</ts>
+    <user>Beula</user>
+    <text>Did you catch which dependency this error pops up under? My guess would be `cython`</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:46:40.395514</ts>
+    <user>Marcela</user>
+    <text>yes</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:46:41.395754</ts>
+    <user>Marcela</user>
+    <text>I believe it is Cython</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:47:04.398661</ts>
+    <user>Marcela</user>
+    <text>well</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:47:07.399040</ts>
+    <user>Marcela</user>
+    <text>it's running cl.exe</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:47:09.399277</ts>
+    <user>Marcela</user>
+    <text>I'm not sure what for</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:47:29.401803</ts>
+    <user>Marcela</user>
+    <text>actually it might be 'bitfield'</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:47:45.403815</ts>
+    <user>Collette</user>
+    <text>&lt;@Marcela&gt; &lt;https://github.com/cython/cython/wiki/InstallingOnWindows&gt;</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:48:26.409172</ts>
+    <user>Marcela</user>
+    <text>looks like bitfield?</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:52:47.442773</ts>
+    <user>Beula</user>
+    <text>It looks like you may be using anaconda? If so, I think they have pre-compiled everything for you</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:52:53.443722</ts>
+    <user>Beula</user>
+    <text>I use unix for a reason...</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:53:25.447797</ts>
+    <user>Marcela</user>
+    <text>yes, i was wondering, could anaconda be the issue here???</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:53:39.449666</ts>
+    <user>Marcela</user>
+    <text>do i need to install a separate python, and use a virtualenv for that</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:53:56.451914</ts>
+    <user>Beula</user>
+    <text>I am not sure, but I think instead of `pip install -r requirements.txt` -&amp;gt; maybe use the anaconda packages ¯\_(ツ)_/¯</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T21:54:04.452929</ts>
+    <user>Marcela</user>
+    <text>mmmm</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T23:17:26.040691</ts>
+    <user>Johana</user>
+    <text>yea, you’ll need to see if anaconda has it in their package manager.</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T23:18:40.048111</ts>
+    <user>Johana</user>
+    <text>&lt;https://gist.github.com/luiscape/19d2d73a8c7b59411a2fb73a697f5ed4&gt;</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-22T23:19:06.050956</ts>
+    <user>Johana</user>
+    <text>this might help :point_up:</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T04:50:00.887252</ts>
+    <user>Gabriele</user>
+    <text>Coming at this about 6 hours late, but any C/C++ process that is trying to #include &amp;lt;io.h&amp;gt; or &amp;lt;unistd.h&amp;gt; isn't configured properly for Windows. Arguably that's a flaw with the packages setup process but it also means there is usually a prebuilt lib somewhere online.</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T05:18:34.296095</ts>
+    <user>Suellen</user>
+    <text>&lt;@Gabriele&gt; doesn't MinGW have `unistd.h`?</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T05:19:29.309069</ts>
+    <user>Gabriele</user>
+    <text>&lt;@Suellen&gt; Probably, but it's not 2002 any more</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T05:19:39.311286</ts>
+    <user>Suellen</user>
+    <text>what do you mean? :confused:</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T05:19:58.315453</ts>
+    <user>Gabriele</user>
+    <text>MinGW is what people used on Windows when Visual C++ cost money and there was no other decent alternative</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T05:20:05.317265</ts>
+    <user>Suellen</user>
+    <text>VC can be used without tearing hair out?</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T05:20:17.320107</ts>
+    <user>Gabriele</user>
+    <text>Yes, unless you prefer gcc, in which case no</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T05:20:21.320970</ts>
+    <user>Suellen</user>
+    <text>well I'm glad that's finally so</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:13:15.327122</ts>
+    <user>Marcela</user>
+    <text>hello mike</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:13:45.337930</ts>
+    <user>Marcela</user>
+    <text>&lt;@Gabriele&gt; How do I fix this?</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:14:08.345853</ts>
+    <user>Marcela</user>
+    <text>there is a setup.py that contains #include io.h</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:14:11.346918</ts>
+    <user>Marcela</user>
+    <text>but i could not remove that line</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:14:41.357437</ts>
+    <user>Gabriele</user>
+    <text>Install the package via a different method. Its website might have some clues</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:16:19.392192</ts>
+    <user>Beula</user>
+    <text>Yeah, I suggested using anaconda since it should have the precompiled one available</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:18:52.445851</ts>
+    <user>Marcela</user>
+    <text>yeah i am trying that but am running into different issue</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:19:05.450291</ts>
+    <user>Marcela</user>
+    <text>it says it cannot find bitfield on the proper channels</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:19:07.450937</ts>
+    <user>Marcela</user>
+    <text>but i found this one here</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:19:07.451061</ts>
+    <user>Marcela</user>
+    <text>&lt;https://anaconda.org/pypi/bitfield&gt;</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:19:24.456578</ts>
+    <user>Marcela</user>
+    <text>and im running
+
+conda install -c pypi bitfield</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:19:26.457228</ts>
+    <user>Marcela</user>
+    <text>and its not working</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:19:32.459312</ts>
+    <user>Marcela</user>
+    <text>is it easier to set up a virtual linux env at this point? lol ugh</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:21:03.490757</ts>
+    <user>Gabriele</user>
+    <text>Without the exact errors it's hard to say</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:26:30.604979</ts>
+    <user>Marcela</user>
+    <text>PackageNotFoundError: Package missing in current win-64 channels:
+  - bitfield</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:26:40.607987</ts>
+    <user>Marcela</user>
+    <text>sry didnt clarify</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:27:12.619101</ts>
+    <user>Meg</user>
+    <text>kill windows, go to linux? ¯\_(ツ)_/¯</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:27:43.629947</ts>
+    <user>Meg</user>
+    <text>basically, even though windows has made good strides in becoming more development friendly outside of C# and Java, it still has a long ways to go</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:28:00.635735</ts>
+    <user>Meg</user>
+    <text>so, for anything outside basic python, I'd just go to linux</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:28:28.645824</ts>
+    <user>Dave</user>
+    <text>`(Mac or Linux) &amp;gt; windows`</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:29:03.658227</ts>
+    <user>Meg</user>
+    <text>with the exception of c# and visual studio</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:29:10.660556</ts>
+    <user>Gabriele</user>
+    <text>I've usually been able to develop just fine on Windows; it's the people who work only on Mac and Linux who tend not to put the extra work in to make their stuff work on Windows. And I guess it's up to them, since nobody's paying them</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:30:05.680152</ts>
+    <user>Ciera</user>
+    <text>or try the linux subsystem</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:30:17.684689</ts>
+    <user>Ciera</user>
+    <text>might be worth it if you can't fully migrate</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:31:20.706826</ts>
+    <user>Gabriele</user>
+    <text>&lt;@Marcela&gt; I'm intrigued as to why you can find a package online, and which claims to be platform-independent, but it appears to not show up when you use `conda install`. That's probably worth taking up with someone more familiar with using conda</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:31:30.710232</ts>
+    <user>Marcela</user>
+    <text>yep</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:31:35.711807</ts>
+    <user>Marcela</user>
+    <text>that error pissed me off lol</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:33:02.742476</ts>
+    <user>Gabriele</user>
+    <text>If you don't _need_ to use anaconda then find the regular package and see if there's a Windows version</text>
+  </message>
+  <message conversation_id="63">
+    <ts>2017-06-23T12:34:11.765216</ts>
+    <user>Gabriele</user>
+    <text>You said "there is a setup.py that contains #include io.h" but that's not true of the bitfield package, so it's not clear what your actual problem is</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:12:08.545982</ts>
+    <user>Twila</user>
+    <text>Hi, guys
+is there one option to use round function and rounding the value
+for example
+2.59 -- show 2.60</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:13:10.566063</ts>
+    <user>Meg</user>
+    <text>&lt;https://docs.python.org/2/library/functions.html#round&gt;</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:13:11.566373</ts>
+    <user>Twila</user>
+    <text>On documents there is a note about that: Note The behavior of round() for floats can be surprising: for example, round(2.675, 2) gives 2.67 instead of the expected 2.68. This is not a bug: it’s a result of the fact that most decimal fractions can’t be represented exactly as a float. See Floating Point Arithmetic: Issues and Limitations for more information.</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:14:03.583596</ts>
+    <user>Meg</user>
+    <text>yup.  what's the question?</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:16:13.627562</ts>
+    <user>Twila</user>
+    <text>look this function: qtd_lata = round(120 / (18 * 3), 2)</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:16:21.630410</ts>
+    <user>Twila</user>
+    <text>returns: 2.0</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:16:35.635243</ts>
+    <user>Twila</user>
+    <text>But if i don't use round function</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:17:08.646403</ts>
+    <user>Meg</user>
+    <text>are you using python 2 or 3?</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:17:37.656025</ts>
+    <user>Beula</user>
+    <text>Related: Division changed in python: &lt;https://www.python.org/dev/peps/pep-0238/&gt;</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:17:47.659176</ts>
+    <user>Beula</user>
+    <text>You can just make any of those numbers a float</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:17:51.660273</ts>
+    <user>Twila</user>
+    <text>Python 2.7.9</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:17:55.661696</ts>
+    <user>Meg</user>
+    <text>```
+python 2
+In [5]: 120 / (18 * 3)
+Out[5]: 2
+
+3
+&amp;gt;&amp;gt;&amp;gt; 120 / (18 * 3)
+2.2222222222222223
+```</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:18:09.666518</ts>
+    <user>Beula</user>
+    <text>`120.0 / (18 * 3)`</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T13:18:11.667269</ts>
+    <user>Marcela</user>
+    <text>&lt;@Gabriele&gt; I tried using virtualenv to install requirements.txt that way but had huge problems</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:18:21.670862</ts>
+    <user>Patty</user>
+    <text>or `from __future__ import division`</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:18:27.673409</ts>
+    <user>Beula</user>
+    <text>Or :point_up::skin-tone-2:</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:19:37.700932</ts>
+    <user>Twila</user>
+    <text>&amp;gt;&amp;gt;&amp;gt; from __future__ import division
+&amp;gt;&amp;gt;&amp;gt; 140 / (18 * 3)
+2.5925925925925926</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:19:50.706178</ts>
+    <user>Twila</user>
+    <text>in this case i need 3</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:19:55.707687</ts>
+    <user>Twila</user>
+    <text>understood</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:19:56.708082</ts>
+    <user>Patty</user>
+    <text>or `from __future__ import division`</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:19:56.708261</ts>
+    <user>Twila</user>
+    <text>?</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:20:10.713752</ts>
+    <user>Twila</user>
+    <text>If i use round</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:20:15.715770</ts>
+    <user>Twila</user>
+    <text>its show 2.0</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:20:26.720219</ts>
+    <user>Patty</user>
+    <text>if you dont want to switch versions of python, use `from __future__ import division` or change one value to a float</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:20:38.724390</ts>
+    <user>Patty</user>
+    <text>what happens when you called `round` after using `from __future__ import division`?</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:21:33.745578</ts>
+    <user>Twila</user>
+    <text>try run this:</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:21:34.745972</ts>
+    <user>Twila</user>
+    <text>from __future__ import division
+round(140 / (18 * 3), 2)</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:21:43.749638</ts>
+    <user>Twila</user>
+    <text>the result is 2.59</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:21:53.753496</ts>
+    <user>Twila</user>
+    <text>i need in this case rounding to 3.0</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:22:14.760626</ts>
+    <user>Patty</user>
+    <text>the second argument to `round` is how many significant digits to give, you’re asking it for 2</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:22:53.775364</ts>
+    <user>Patty</user>
+    <text>hence it being 2.59</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:23:02.778334</ts>
+    <user>Patty</user>
+    <text>remove the second argument to the round function to get a whole number</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:23:09.780996</ts>
+    <user>Meg</user>
+    <text>@flasp look at code formatting with slack</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:23:10.781257</ts>
+    <user>Meg</user>
+    <text>&lt;https://get.slack.help/hc/en-us/articles/202288908-Format-your-messages#code-blocks&gt;</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:23:18.783584</ts>
+    <user>Twila</user>
+    <text>perfect JOE</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:23:18.783662</ts>
+    <user>Patty</user>
+    <text>```
+from __future__ import division
+round(140 / (18 * 3))
+```</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:23:23.784987</ts>
+    <user>Patty</user>
+    <text>should equal 3.0</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:23:23.785134</ts>
+    <user>Twila</user>
+    <text>very good man</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:23:34.789736</ts>
+    <user>Twila</user>
+    <text>so easy</text>
+  </message>
+  <message conversation_id="64">
+    <ts>2017-06-23T13:23:36.790194</ts>
+    <user>Twila</user>
+    <text>ahauuaa</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T13:38:46.111426</ts>
+    <user>Gabriele</user>
+    <text>&lt;@Marcela&gt; virtualenv won't change the underlying problem, unfortunately. It just changes where the final packages get stored</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T13:39:13.120548</ts>
+    <user>Marcela</user>
+    <text>yeah</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T13:39:32.127139</ts>
+    <user>Marcela</user>
+    <text>i cant edit setup.py to remove #include io.h for some reason</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T13:43:30.209908</ts>
+    <user>Gabriele</user>
+    <text>Why do you think there is that include inside setup.py?</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T13:43:46.215749</ts>
+    <user>Gabriele</user>
+    <text>#include is a C/C++ construct, setup.py is Python</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T13:54:32.443642</ts>
+    <user>Marcela</user>
+    <text>idk, tbh</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T13:54:37.445189</ts>
+    <user>Marcela</user>
+    <text>this is my first time setting up a python environment</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T13:59:10.544435</ts>
+    <user>Patty</user>
+    <text>some cursory googling makes this sound like a VS issue</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:04:00.649949</ts>
+    <user>Marcela</user>
+    <text>yeah</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:04:07.652420</ts>
+    <user>Marcela</user>
+    <text>ive installed all i can</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:04:08.652540</ts>
+    <user>Marcela</user>
+    <text>llo</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:04:09.652886</ts>
+    <user>Marcela</user>
+    <text>lol</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:04:30.660231</ts>
+    <user>Marcela</user>
+    <text>i believe its vs2015_runtime because anaconda automatically installs that one for me</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:04:43.664700</ts>
+    <user>Marcela</user>
+    <text>however when i try to install it myself in venv i am getting the io.h issues</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:04:54.668637</ts>
+    <user>Marcela</user>
+    <text>or maybe that is still a completely separate issue</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:05:21.677712</ts>
+    <user>Marcela</user>
+    <text>the fact that it cannot detect bitfield in anaconda even though i am looking right at the package is weird to me</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:05:50.687844</ts>
+    <user>Patty</user>
+    <text>because VS doesn’t know where to look for the header: &lt;https://stackoverflow.com/questions/40018405/cython-cannot-open-include-file-io-h-no-such-file-or-directory&gt;</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:36:13.322695</ts>
+    <user>Marcela</user>
+    <text>yeah i remember trying that two days ago</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:36:17.324180</ts>
+    <user>Marcela</user>
+    <text>i forgot why it wasnt working</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:36:19.324942</ts>
+    <user>Marcela</user>
+    <text>should try again today</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:38:42.373618</ts>
+    <user>Gabriele</user>
+    <text>I know I mentioned it earlier but references to io.h are usually a bad sign on Windows, and references to unistd.h are almost certainly wrong</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:39:13.383964</ts>
+    <user>Gabriele</user>
+    <text>It implies that something is not picking up the platform correctly; or just isn't designed to build on Windows at all</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:41:20.428048</ts>
+    <user>Patty</user>
+    <text>we also have &lt;#C5XHHMXHB|os_windows&gt; and someone may know there, or maybe a linux VM would be easier at this point ¯\_(ツ)_/¯</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T14:47:07.545330</ts>
+    <user>Gabriele</user>
+    <text>ugh, looks like pyconfig.h is usually output by the configure script... so who knows what state it might be in when a Windows compiler gets hold of it</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:02:22.856635</ts>
+    <user>Marcela</user>
+    <text>yeah i believe that is one of the problems</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:02:40.862780</ts>
+    <user>Marcela</user>
+    <text>read in another thread that windows has a tendency to mishandle the script</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:02:56.867741</ts>
+    <user>Marcela</user>
+    <text>if i put Linux Bash on Windows, am I able to set up an environment that way?</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:03:08.871990</ts>
+    <user>Marcela</user>
+    <text>or linux VM yeah like joe suggested</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:09:36.997768</ts>
+    <user>Meg</user>
+    <text>why don't you skip windows entirely</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:09:41.999257</ts>
+    <user>Meg</user>
+    <text>and go straight to linux vm?</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:09:55.003639</ts>
+    <user>Meg</user>
+    <text>you've been bashing your head against this issue for, what, two days now?</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:10:19.011239</ts>
+    <user>Meg</user>
+    <text>I'd say you've given it an honest effort, now use something that _works_</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:36:06.475340</ts>
+    <user>Marcela</user>
+    <text>yeah. i think im just stubborn</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:36:11.476860</ts>
+    <user>Marcela</user>
+    <text>its a side project so im not rushed for time</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:36:14.477699</ts>
+    <user>Marcela</user>
+    <text>but its time to admit defeat lol</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:36:54.488925</ts>
+    <user>Marcela</user>
+    <text>if i remember correctly, there are vms that are basically terminal only right?</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:38:30.516334</ts>
+    <user>Patty</user>
+    <text>the VMs just run whatever image you give them, and most linux images are the full OS. why do you ask?</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:39:34.534534</ts>
+    <user>Beula</user>
+    <text>You could do `vagrant`</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:39:42.536737</ts>
+    <user>Beula</user>
+    <text>Pretty easy to set up and reproduce your dev env that way</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:46:33.654562</ts>
+    <user>Marcela</user>
+    <text>i was just thinking of minimalistic options</text>
+  </message>
+  <message conversation_id="65">
+    <ts>2017-06-23T15:46:59.661732</ts>
+    <user>Marcela</user>
+    <text>but i guess i'd like IDEs and guis and such</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:50:37.237989</ts>
+    <user>Minh</user>
+    <text>hello</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:51:32.246001</ts>
+    <user>Minh</user>
+    <text>anyone know regex that find url link with specific type eg:&lt;http://eg.com/asd.pdf&gt;</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:51:50.248721</ts>
+    <user>Meg</user>
+    <text>type of what?</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:52:03.250665</ts>
+    <user>Meg</user>
+    <text>what is specific about that that you need to match?</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:52:17.252731</ts>
+    <user>Minh</user>
+    <text>specific extension</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:52:23.253565</ts>
+    <user>Minh</user>
+    <text>like .pdf</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:52:26.253966</ts>
+    <user>Minh</user>
+    <text>.mp4</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:54:10.268992</ts>
+    <user>Patty</user>
+    <text>Are you more concerned with the extension itself or what kind of file it is?</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:54:44.273766</ts>
+    <user>Patty</user>
+    <text>Because you can get a lot from the `Content-Type` header when you make a request to it</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:54:58.275798</ts>
+    <user>Patty</user>
+    <text>Unless you only have strings that are the URLs</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:55:56.284234</ts>
+    <user>Patty</user>
+    <text>And if you go that route the `mimetypes` module can guess and extension from that</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:57:40.299111</ts>
+    <user>Minh</user>
+    <text>&lt;https://raw.githubusercontent.com/EbookFoundation/free-programming-books/master/free-programming-books.md&gt;</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:58:40.307947</ts>
+    <user>Minh</user>
+    <text>im trying to get only pdf link</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T18:59:45.317689</ts>
+    <user>Minh</user>
+    <text>im already used mimetypes but its iterates all link,all i want is find url with .pdf extension then download it</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T19:02:16.343128</ts>
+    <user>Patty</user>
+    <text>So only save the ones with the correct mimetype. &lt;@Meg&gt; if I'm missing anything feel free to step in this is more your wheelhouse</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T19:02:24.344301</ts>
+    <user>Minh</user>
+    <text>yea correct</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T19:02:29.344966</ts>
+    <user>Meg</user>
+    <text>here's what I'd do.
+
+install &lt;https://pythonhosted.org/Markdown/&gt; and beautiful soup</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T19:02:35.345847</ts>
+    <user>Meg</user>
+    <text>and requests</text>
+  </message>
+  <message conversation_id="66">
+    <ts>2017-06-23T19:02:58.349003</ts>
+    <user>Meg</user>
+    <text>use requests to get that link you posted above, put it into python-markdown to convert to html</text>
+  </message>
+</slack>

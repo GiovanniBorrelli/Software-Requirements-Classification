@@ -1,0 +1,301 @@
+<slack>
+  <team_domain>pythondev</team_domain>
+  <channel_name>help</channel_name>
+  <start_date>2014-11-05T08:56:48.313010</start_date>
+  <end_date>2017-12-31T01:00:01.596486</end_date>
+  <message conversation_id="1">
+    <ts>2017-06-16T10:51:34.290598</ts>
+    <user>Melvin</user>
+    <text>Is it possible to switch between conda and virtualenv? That is I want to switch the actual environment managers not just environments in them … I typically use conda but want to try something out that requires virtual env and is not compatible with conda.  Thanks.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T10:55:34.384740</ts>
+    <user>Beula</user>
+    <text>What is it that "requires virtualenv", most things I know don't require anything other than an interpreter and dependencies</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:05:27.626658</ts>
+    <user>Melvin</user>
+    <text>&lt;@Beula&gt; zappa …. at least if you don’t want to mess with the zappa-conda fork.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:12:26.790435</ts>
+    <user>Johana</user>
+    <text>i don’t see why you couldn’t use a virtualenv for virtualenv things and conda for conda things. the issue is when you try to mix them together but as long as you’re pointed at the right python interpreter things should work.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:12:47.798620</ts>
+    <user>Johana</user>
+    <text>what have you tried so far?</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:12:55.802001</ts>
+    <user>Melvin</user>
+    <text>Ok. So … I’m not sure how to ‘point’ it at the right thing … not even sure where to start.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:13:25.813347</ts>
+    <user>Melvin</user>
+    <text>Just switch the path/env settings?</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:13:25.813670</ts>
+    <user>Johana</user>
+    <text>with virtualenv you activate the environment and it does a lot of handy little things for you like setting the python python.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:13:37.818110</ts>
+    <user>Johana</user>
+    <text>so you activate the virtualenv when you want to use zappa.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:14:49.846808</ts>
+    <user>Johana</user>
+    <text>`source /venv-name/bin/activate` should do it</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:15:22.859984</ts>
+    <user>Johana</user>
+    <text>are you using python 2 or python 3?</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:16:05.876875</ts>
+    <user>Hillary</user>
+    <text>Conda does the same really, so ```conda create envname``` gives you a conda environment</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:16:23.884079</ts>
+    <user>Hillary</user>
+    <text>and then ```source activate envname``` sets it up</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:16:50.894537</ts>
+    <user>Hillary</user>
+    <text>you can use ```which python``` to check which one you are using</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:17:14.903791</ts>
+    <user>Johana</user>
+    <text>but i think the issue is with the library &lt;@Hillary&gt;, :re &lt;https://pythondev.slack.com/archives/C07EFMZ1N/p1497625527626658&gt;</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:17:15.903816</ts>
+    <user>Melvin</user>
+    <text>3 … and (maybe this is just a dumb question) but I was worried that installing using conda to install virtual env is not what I wanted.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:17:17.904817</ts>
+    <user>Hillary</user>
+    <text>but as &lt;@Johana&gt; said, probably best to not try and mix them up</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:17:58.920546</ts>
+    <user>Hillary</user>
+    <text>Oh, hadn't seen zappa before</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:21:00.991498</ts>
+    <user>Johana</user>
+    <text>when you do `which python` what comes up?</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:21:14.996747</ts>
+    <user>Melvin</user>
+    <text>Normally the conda one.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:22:13.019636</ts>
+    <user>Johana</user>
+    <text>that’s where we would run into our first issue. we wouldn’t want to be using the conda one. we would want something like the system python, i believe.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:22:27.025256</ts>
+    <user>Melvin</user>
+    <text>Right… thus my question :slightly_smiling_face:</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:23:08.040418</ts>
+    <user>Melvin</user>
+    <text>Seems like I need to be able to deactivate conda and ‘activate’ python3 (sytem would be python2) and then use virtual env.  Thanks for getting me started on the right track.</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:23:40.053156</ts>
+    <user>Hillary</user>
+    <text>when you create the environment, you can specify something like: ``` virtualenv envname --python='path/to/python'```</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:23:54.058494</ts>
+    <user>Hillary</user>
+    <text>if that helps</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:24:54.081996</ts>
+    <user>Melvin</user>
+    <text>Yes, thanks &lt;@Hillary&gt;</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:25:24.093955</ts>
+    <user>Hillary</user>
+    <text>then follow &lt;@Johana&gt; advice on activating</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:25:54.105805</ts>
+    <user>Melvin</user>
+    <text>conda sets the path to point to its bin directory … so I may need a way to not do that when trying to do virtualenv/zapp stuff … before I can activate the zappa env (if I understand this correctly).</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:32:17.257230</ts>
+    <user>Hillary</user>
+    <text>related to this? &lt;https://github.com/Miserlou/Zappa/issues/167&gt;</text>
+  </message>
+  <message conversation_id="1">
+    <ts>2017-06-16T11:34:07.300432</ts>
+    <user>Melvin</user>
+    <text>Yes. I just wanted to explore Zappa without having any conda/virtualenv issues. Don’t need conda for this so wanted to switch to using virtualenv and wasn’t sure how to do it. I think I have a strategy now.  Thanks everyone.</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:36:44.668404</ts>
+    <user>Rona</user>
+    <text>heya</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:23.821938</ts>
+    <user>Johana</user>
+    <text>sup &lt;@Rona&gt;</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:34.825369</ts>
+    <user>Johana</user>
+    <text>how’s the masters program going?</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:38.826837</ts>
+    <user>Rona</user>
+    <text>oh I am done</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:41.827837</ts>
+    <user>Johana</user>
+    <text>nice!</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:43.828431</ts>
+    <user>Rona</user>
+    <text>graduate a month ago</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:43.828566</ts>
+    <user>Johana</user>
+    <text>congrats!</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:50.830983</ts>
+    <user>Rona</user>
+    <text>so now I got time for python meetups</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:56.832793</ts>
+    <user>Rona</user>
+    <text>thansk &lt;@Johana&gt;</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:44:59.833887</ts>
+    <user>Johana</user>
+    <text>haha.. cool :thumbsup:</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:45:38.847124</ts>
+    <user>Rona</user>
+    <text>anything on your end</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:46:16.859718</ts>
+    <user>Johana</user>
+    <text>same old stuff for the most part. i’m just trying to achieve perfect work/life ~balance~ harmony. lol</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:46:47.870159</ts>
+    <user>Rona</user>
+    <text>me to</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:46:56.873056</ts>
+    <user>Rona</user>
+    <text>I am like 75% coding</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:06.876465</ts>
+    <user>Rona</user>
+    <text>if not 10 % of no coding is spent thinking of coding</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:09.877535</ts>
+    <user>Rona</user>
+    <text>the rest is sleep</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:14.879053</ts>
+    <user>Rona</user>
+    <text>and some netlfix</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:26.883061</ts>
+    <user>Rona</user>
+    <text>75% of coding is doing work coding</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:35.886153</ts>
+    <user>Johana</user>
+    <text>that’s good.</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:36.886671</ts>
+    <user>Rona</user>
+    <text>I should say 50% coding 15 % work none coding</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:42.888337</ts>
+    <user>Johana</user>
+    <text>python or .net?</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:49.890778</ts>
+    <user>Rona</user>
+    <text>.net</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:52.891794</ts>
+    <user>Rona</user>
+    <text>but some python also</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:55.892872</ts>
+    <user>Johana</user>
+    <text>or both</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:59.893935</ts>
+    <user>Rona</user>
+    <text>I just love both</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:47:59.894139</ts>
+    <user>Johana</user>
+    <text>you try some iron python?</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:48:05.896004</ts>
+    <user>Rona</user>
+    <text>I want to</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:48:16.899562</ts>
+    <user>Johana</user>
+    <text>you doing C# or VB?</text>
+  </message>
+  <message conversation_id="2">
+    <ts>2017-06-16T12:48:19.900657</ts>
+    <user>Rona</user>
+    <text>I want to try WPF in iron python</text>
+  </message>
+</slack>
